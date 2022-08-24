@@ -1,0 +1,163 @@
+/* Reseting Browser Default Style */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font: inherit;
+   font-family: 'Ubuntu', sans-serif;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+   margin-bottom: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+ul {
+   list-style: none;
+}
+
+html, body {
+   min-height: 100%;
+}
+
+:root {
+   --clr-dark: #06050E;
+   
+   --clr-purple: #270082;
+
+   --clr-purple-dark: #1A1A40;
+
+   --clr-purple-light: #7A0BC0;
+
+   --clr-purple-soft: #7A0BC0;
+}
+
+body {
+   background-color: var(--clr-dark);
+}
+
+
+
+/* Components */
+
+.container {
+   margin: 0 auto;
+   padding: 0 10px;
+   max-width: 1216px;
+   position: relative;
+}
+
+/* Header */
+
+.main-header {
+   height: 80px;
+   border-bottom: 1px solid var(--clr-purple-light);
+}
+
+.header-container #main-logo {
+   width: 70px;
+}
+
+.header-container {
+   height: 100%;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header-menu ul {
+   display: flex;
+   align-items: center;
+}
+
+.header-menu ul li:not(:last-child) {
+   margin-right: 40px;
+}
+
+.header-menu ul a {
+   display: flex;
+   align-items: center;
+   transition: .3s all;
+}
+
+.header-menu ul a:hover {
+   color: var(--clr-purple-light);
+}
+
+.header-menu ul a i {
+   font-size: 1.3rem;
+   margin-right: 10px;
+}
+
+.header-menu li {
+   position: relative;
+}
+
+.header-menu li::after {
+   display: block;
+   content:'';
+
+   height: 3px;
+   width: 90%;
+
+   position: absolute;
+   z-index: 700;
+   top: 27px;
+   left: 5px;
+
+   border-radius: 50px 0px 50px 0px;
+   background: linear-gradient(89.34deg, var(--clr-purple-soft) 6.18%, var(--clr-purple-light) 89.94%);
+
+   transition: transform .3s ease-in-out;
+   transform-origin: right;
+   transform: scaleX(0);
+   
+}
+
+.header-menu li:hover::after {
+   transform-origin: left;
+   transform: scaleX(1);
+}
+
+.lines {
+   margin: 30px;
+   cursor: pointer;
+}
+
+.line {
+   height: 2px;
+   width: 40px;
+   background-color: red;
+   transition: .3s all ease-in-out;
+}
+
+.line:nth-child(2) {
+   margin-top: 10px;
+}
+
+.line:nth-child(3) {
+   margin-top: 10px;
+}
+
+.line.top {
+   transform: rotate(45deg) translate(8px, 13px);
+}
+
+.line.middle {
+   opacity: 0;
+}
+
+.line.bottom {
+   transform: rotate(-45deg) translate(4px, -10px);
+
+}

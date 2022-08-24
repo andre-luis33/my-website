@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <meta property="og:type" content="website"/>
+   <meta property="og:site_name" content="Portfólio | André Luís">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:title" content="Portfólio | André Luís"/>
+   <meta property="og:description" content="Esse é o meu portfólio, espero que todo mundo que venha a entrar aqui goste do que veja =)"/>
+   <!-- <meta property="og:url" content="url-do-site"/> -->
+   <!-- <meta property="og:image" content="img-que-vai-representar-site"/> -->
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+   
+   <link rel="icon" type="image/png" sizes="16x16"  href="assets/img/logo.png">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="assets/css/style.css">
+   
+   <title>Portfólio | André Luís</title>
+</head>
+<body>
+   <header class="main-header">
+      <div class="container header-container">
+         <a class="logo-wrapper" href="#">
+            <img id="main-logo" src="assets/img/logo.png" alt="Logo do Site">
+         </a>
+   
+         <nav class="header-menu">
+            <ul>
+               <li>
+                  <a href="">
+                     <i class="fas fa-user"></i>
+                     Sobre
+                  </a>
+               </li>
+               <li>
+                  <a href="">
+                     <i class="fas fa-terminal"></i>
+                     Skills
+                  </a>
+               </li>
+               <li>
+                  <a href="">
+                     <i class="fas fa-laptop-code"></i>
+                     Portfólio
+                  </a>
+               </li>
+               <li>
+                  <a href="">
+                     <i class="far fa-envelope"></i>
+                     Contato
+                  </a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+
+
+   <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+   </div>
+
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script>
+      $('.lines').click(() => {
+         
+         let isClicked = $('.lines').attr('clicked') == 'true'
+
+         if(isClicked) {
+            $('.lines').attr('clicked', 'false')
+
+            $('.line').eq(0).removeClass('top')
+            $('.line').eq(1).removeClass('middle')
+            $('.line').eq(2).removeClass('bottom')
+         } else {
+            $('.lines').attr('clicked', 'true')
+
+            $('.line').eq(0).addClass('top')
+            $('.line').eq(1).addClass('middle')
+            $('.line').eq(2).addClass('bottom')
+         }
+
+         
+      })
+   </script>
+</body>
+</html>
