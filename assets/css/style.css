@@ -6,6 +6,9 @@
    box-sizing: border-box;
    font: inherit;
    font-family: 'Ubuntu', sans-serif;
+
+   scroll-behavior: smooth;
+   /* scroll-margin-top: -400px; */
 }
 
 img {
@@ -316,9 +319,10 @@ body {
    overflow: hidden;
 
    background-image: url('../img/setup.jpg');
-   background-size: 100%;
+   background-size: 80%;
    background-repeat: no-repeat;
    background-position-y: 70%;
+   background-position-x: center;
    background-blend-mode: color;
    background-color: rgba(0,0,0, .7);
 
@@ -411,6 +415,7 @@ body {
 
 .welcome-section .btn-wrapper {
    display: flex;
+   flex-wrap: wrap;
 }
 
 .welcome-section button:first-child {

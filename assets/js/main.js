@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
    const btnMobile = $('#btn-mobile')
@@ -12,16 +12,30 @@ $(document).ready(function() {
    })
 
 
-   const birthDay    = new Date('2000-11-18')
-   const today       = new Date()
-   const yearDiffObj = new Date(today.getTime() - birthDay.getTime())
-   const yearDiff    = yearDiffObj.getFullYear()
-   const yearsCoding = yearDiff - 20
+   function getAge(date) {
+      let today = new Date();
+      let birthDate = new Date(date);
+
+      let age = today.getFullYear() - birthDate.getFullYear();
+      let m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+         age--;
+      }
+      return age;
+   }
+
+   const birthDate      = '2000-11-18'
+   const dateStartedDev = '2019-09-01'
+   
+   const age    = getAge(birthDate)
+   const devAge = getAge(dateStartedDev)
 
    const ageElement = $('#my-age')
-   const yearsCodingElement = $('#years-coding')
-   ageElement.text(yearDiff)
+   const yearsDevElement = $('#years-coding')
+   
+   ageElement.text(age)
+   yearsDevElement.text(devAge)
    
 
 
-})
+// })
