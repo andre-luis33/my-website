@@ -58,41 +58,84 @@
                </li>
             </ul>
          </nav>
+
+         <button id="btn-mobile">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+         </button>
       </div>
    </header>
 
+   <section class="welcome-section">
+      <section class="container welcome-container">
+         <div class="wrapper">
+            <h1>Hello, World!</h1>
+            <h2>
+               Eu sou o <span id="my-name">André Luís</span>, sejam <br>
+               muuito bem-vindos ao meu portfólio <i class="far fa-grin text-purple-soft"></i>
+            </h2>
 
+            <div class="btn-wrapper">
+               <button class="btn-pushable btn-purple">
+                  <span>
+                     Contato
+                     <i class="fas fa-location-arrow"></i>
+                  </span>
+               </button>
 
-   <div class="lines">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-   </div>
+               <button class="btn-pushable btn-white">
+                  <span>
+                     Download CV
+                     <i class="fas fa-file-download"></i>
+                  </span>
+               </button>
+            </div>
+         </div>
+      </section>
+   </section>
 
+   <section class="container about-section">
+      <h3 class="section-title">
+         Sobre Mim
+      </h3>
 
+      <div class="wrapper">
+         <div class="img">
+            <img src="assets/img/profile.png" alt="Foto de André Luís">
+         </div>
+
+         <div class="text-content">
+            <p>
+               Eu sou o André Luís, tenho <span id="my-age"></span> anos, e <span id="years-coding"></span> deles como desenvolvedor web, mais focado em back-end, 
+               com conhecimento forte em <span class="text-purple-soft bold">HTML, CSS, Bootstrap, Javascript, jQuery, PHP e SQL.</span> Sou formado em 
+               Análise e Desenvolvimento de Sistemas, no Centro Universitário Unicarioca. 
+            </p>
+
+            <button class="btn-pushable btn-purple">
+               <span>
+                  Download CV
+                  <i class="fas fa-file-download"></i>
+               </span>
+            </button>
+
+            <button class="btn-pushable btn-purple">
+               <span>
+                  Ver Linkedin
+                  <i class="fab fa-linkedin"></i>
+               </span>
+            </button>
+         </div>
+      </div>
+   </section>
+
+   <section class="container skills-container">
+      <h3 class="section-title">
+         Minhas Skills
+      </h3>
+   </section>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   <script>
-      $('.lines').click(() => {
-         
-         let isClicked = $('.lines').attr('clicked') == 'true'
-
-         if(isClicked) {
-            $('.lines').attr('clicked', 'false')
-
-            $('.line').eq(0).removeClass('top')
-            $('.line').eq(1).removeClass('middle')
-            $('.line').eq(2).removeClass('bottom')
-         } else {
-            $('.lines').attr('clicked', 'true')
-
-            $('.line').eq(0).addClass('top')
-            $('.line').eq(1).addClass('middle')
-            $('.line').eq(2).addClass('bottom')
-         }
-
-         
-      })
-   </script>
+   <script src="assets/js/main.js"></script>
 </body>
 </html>
