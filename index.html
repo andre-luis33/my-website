@@ -19,6 +19,7 @@
    
    <link rel="icon" type="image/png" sizes="16x16"  href="assets/img/logo.png">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
    <link rel="stylesheet" href="assets/css/style.css">
    
    <title>Portfólio | André Luís</title>
@@ -31,7 +32,7 @@
          </a>
    
          <nav class="header-menu">
-            <ul>
+            <ul role="list">
                <li>
                   <a href="#about">
                      <i class="fas fa-user"></i>
@@ -77,19 +78,19 @@
             </h2>
 
             <div class="btn-wrapper">
-               <button class="btn-pushable btn-purple">
+               <a class="btn-pushable btn-purple">
                   <span>
                      Contato
                      <i class="fas fa-location-arrow"></i>
                   </span>
-               </button>
+               </a>
 
-               <button class="btn-pushable btn-white">
+               <a class="btn-pushable btn-white">
                   <span>
                      Download CV
                      <i class="fas fa-file-download"></i>
                   </span>
-               </button>
+               </a>
             </div>
          </div>
       </section>
@@ -112,19 +113,22 @@
                Análise e Desenvolvimento de Sistemas, no Centro Universitário Unicarioca. 
             </p>
 
-            <button class="btn-pushable btn-purple">
-               <span>
-                  Download CV
-                  <i class="fas fa-file-download"></i>
-               </span>
-            </button>
+            <div class="btn-wrapper">
+               <button class="btn-pushable btn-purple">
+                  <span>
+                     Download CV
+                     <i class="fas fa-file-download"></i>
+                  </span>
+               </button>
+   
+               <button class="btn-pushable btn-purple">
+                  <span>
+                     Ver Linkedin
+                     <i class="fab fa-linkedin"></i>
+                  </span>
+               </button>
+            </div>
 
-            <button class="btn-pushable btn-purple">
-               <span>
-                  Ver Linkedin
-                  <i class="fab fa-linkedin"></i>
-               </span>
-            </button>
          </div>
       </div>
    </section>
@@ -137,19 +141,230 @@
       <div class="wrapper">
          <div class="accordion">
             <h4 class="title">
-               <i class="fas"></i>
+               <i class="fas fa-code"></i>
                Front-end Developer
             </h4>
 
-            <button class="arrow">
-               <i class="fas"></i>
+            <button class="accordion-arrow">
+               <i class="fas fa-chevron-down"></i>
             </button>
+
+            <div class="accordion-body">
+               <div class="text-content">
+                  <h5 class="title" id="front-end-title">
+                     HTML
+                  </h5>
+                  <p class="body" id="front-end-body">
+                  </p>
+               </div>
+               <div class="icons-wrapper">
+                  <div class="icon" data-icon-hover="#E56027" data-skill-name="html">
+                     <i class="fab fa-html5"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1371B1" data-skill-name="css">
+                     <i class="fab fa-css3"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#EAD41C" data-skill-name="js">
+                     <i class="fab fa-js-square"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1169AE" data-skill-name="jquery">
+                     <i class="fab fa-jsfiddle"></i>
+                  </div>
+                  <div class="icon" >
+                     <i class="far fa-user"></i>
+                     <!-- <i class="fab fa-bootstrap"></i> -->
+                  </div>
+                  <div class="icon" data-icon-hover="#5CCFEE" data-skill-name="react">
+                     <i class="fab fa-react"></i>
+                  </div>
+                  <div class="icon">
+                     <i class="fas fa-sitemap"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="accordion">
+            <h4 class="title">
+               <i class="fas fa-terminal"></i>
+               Back-end Developer
+            </h4>
+
+            <button class="accordion-arrow">
+               <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="accordion-body">
+               <div class="text-content">
+                  <h5 class="title" id="front-end-title">
+                     HTML
+                  </h5>
+                  <p class="body" id="front-end-body">
+                  </p>
+               </div>
+               <div class="icons-wrapper">
+                  <div class="icon" data-icon-hover="#E56027" data-skill-name="html">
+                     <i class="fab fa-html5"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1371B1" data-skill-name="css">
+                     <i class="fab fa-css3"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#EAD41C" data-skill-name="js">
+                     <i class="fab fa-js-square"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1169AE" data-skill-name="jquery">
+                     <i class="fab fa-jsfiddle"></i>
+                  </div>
+                  <div class="icon" >
+                     <i class="far fa-user"></i>
+                     <!-- <i class="fab fa-bootstrap"></i> -->
+                  </div>
+                  <div class="icon" data-icon-hover="#5CCFEE" data-skill-name="react">
+                     <i class="fab fa-react"></i>
+                  </div>
+                  <div class="icon">
+                     <i class="fas fa-sitemap"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="accordion">
+            <h4 class="title">
+               <i class="fas fa-code"></i>
+               E além de código?
+            </h4>
+
+            <button class="accordion-arrow">
+               <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="accordion-body">
+               <div class="text-content">
+                  <h5 class="title" id="front-end-title">
+                     HTML
+                  </h5>
+                  <p class="body" id="front-end-body">
+                  </p>
+               </div>
+               <div class="icons-wrapper">
+                  <div class="icon" data-icon-hover="#E56027" data-skill-name="html">
+                     <i class="fab fa-html5"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1371B1" data-skill-name="css">
+                     <i class="fab fa-css3"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#EAD41C" data-skill-name="js">
+                     <i class="fab fa-js-square"></i>
+                  </div>
+                  <div class="icon" data-icon-hover="#1169AE" data-skill-name="jquery">
+                     <i class="fab fa-jsfiddle"></i>
+                  </div>
+                  <div class="icon" >
+                     <i class="far fa-user"></i>
+                     <!-- <i class="fab fa-bootstrap"></i> -->
+                  </div>
+                  <div class="icon" data-icon-hover="#5CCFEE" data-skill-name="react">
+                     <i class="fab fa-react"></i>
+                  </div>
+                  <div class="icon">
+                     <i class="fas fa-sitemap"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </section>
+
+   <section class="container portfolio-container">
+      <h3 class="section-title">
+         Meu Portfólio
+      </h3>
+
+      <button class="portifolio-previous-arrow">
+         <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <button class="portifolio-next-arrow">
+         <i class="fas fa-chevron-right"></i>
+      </button>
+<!-- 
+      <button class="dots">dot</button>
+      <div class="portfolio-dots">
+      </div> -->
+
+      <div class="portfolio-wrapper">
+         <div class="wrapper to-do-list">
+            <div class="img">
+               <img src="assets/img/to-do-list.png" alt="Projeto Lista de Tarefas">
+            </div>
+   
+            <div class="text-content">
+               <h4 class="title">
+                  To Do List
+               </h4>
+               <p class="description">
+                  To Do List feito com o intuinto de aprimorar os conhecimentos usando React. Bootstrap e salvando os items no local storage. Também foi implementado um dark mode
+                  <h5>Stack Usada:</h5>
+                  <ul>
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>React</li>
+                     <li>Bootstrap</li>
+                  </ul>
+               </p>
+   
+               <div class="btn-wrapper">
+                  <a href="https://dbest-to-do-app.herokuapp.com/" target="blank" class="btn-pushable btn-purple">
+                     <span>
+                        Live Demo
+                        <i class="fas fa-external-link-alt"></i>
+                     </span>
+                  </a>
+   
+                  <a class="btn-pushable btn-white">
+                     <span>
+                        Ver Código
+                        <i class="fab fa-github"></i>
+                     </span>
+                  </a>
+               </div>
+            </div>
+         </div>
+
+         <div class="wrapper password-validator">
+            <div class="img">
+               <img src="assets/img/password-validator.png" alt="Projeto Validador de Senha">
+            </div>
+   
+            <div class="text-content">
+               <h4 class="title">
+                  Password Validator
+               </h4>
+               <p class="description">
+                  Validador de senhas bem simples usando somente HTML, CSS e Javascript
+               </p>
+   
+               <div class="btn-wrapper">
+                  <a href="https://andre-luis33.github.io/password-validator/" target="blank" class="btn-pushable btn-purple">
+                     <span>
+                        Live Demo
+                        <i class="fas fa-external-link-alt"></i>
+                     </span>
+                  </a>
+   
+                  <a class="btn-pushable btn-white">
+                     <span>
+                        Ver Código
+                        <i class="fab fa-github"></i>
+                     </span>
+                  </a>
+               </div>
+            </div>
          </div>
       </div>
-
    </section>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="assets/js/main.js"></script>
 </body>
 </html>
