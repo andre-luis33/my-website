@@ -37,6 +37,18 @@ button {
    border: 0;
    outline: 0;
    cursor: pointer;
+   background-color: transparent;
+}
+
+button.disabled {
+   cursor: no-drop;
+   background-color: var(--clr-purple-dark) !important;
+}
+
+button.disabled span {
+   background-color: var(--clr-purple-dark) !important;
+   transform: translate(0, 0);
+   font-style: italic;
 }
 
 /* Custom properties */
@@ -205,6 +217,10 @@ body {
    font-weight: bold;
 }
 
+.pl-5 {
+   padding-left: 1rem;
+}
+
 
 /* ######################################## */
 /* #              Header                  # */
@@ -216,7 +232,7 @@ body {
    
    position: fixed;
    top: 0;
-   z-index: 10;
+   z-index: 500;
    
    border-bottom: 1px solid var(--clr-purple-light);
    background-color: var(--clr-dark);
@@ -536,7 +552,7 @@ body {
    font-size: 2rem;
 }
 
-.accordion .title i {
+.accordion > .title i {
    margin-right: 20px;
 }
 
@@ -590,35 +606,53 @@ body {
    
    border-radius: 5px;
    font-size: 4.5rem;
-
+   
    display: flex;
    align-items: center;
    justify-content: center;
-
+   
    margin: 0 21px 21px 0;
+}
+
+.icons-wrapper .smaller-icon {
+   font-size: 3.5rem;
 }
 
 .icons-wrapper .icon:nth-child(n+5) {
    margin-bottom: 0;
 }
 
-.icons-wrapper .icon i {
+.icons-wrapper .icon :is(i, svg, svg path) {
    transition: .3s all;
 }
 
-#jquery-icon {
-   background-color: red;
-   -webkit-mask: url('../img/jquery-icon.svg') no-repeat center;
-   mask: url('../img/jquery-icon.svg') no-repeat center;
+.fa-hand-point-right {
+   animation: handMoving .7s infinite;
 }
 
+@keyframes handMoving {
+   0% {
+      transform: translateX(-5px);
+   }
+
+   50% {
+      transform: translateX(15px);
+   }
+
+   100% {
+      transform: translateX(-5px);
+   }
+}
+
+h5 small {
+   font-size: 1rem;
+}
 
 /* ######################################## */
 /* #              Portfolio               # */
 /* ######################################## */
 
 .portfolio-container {
-   margin-bottom: 200px;
    position: relative;
 }
 
@@ -681,6 +715,10 @@ body {
    margin-bottom: 15px;
 }
 
+.portfolio-container .btn-wrapper {
+   margin-top: 15px;
+}
+
 .slick-dots {
    margin-top: 25px;
    display: flex;
@@ -707,6 +745,240 @@ body {
 .slick-dots li:not(:last-child) {
    margin-right: 10px;
 }
+
+
+/* ######################################## */
+/* #              Contato                 # */
+/* ######################################## */
+
+.contact-container .wrapper {
+   display: flex;
+   justify-content: space-between;
+}
+
+.contact-container .links-wrapper {
+   width: 45%;
+}
+
+.contact-container .contact-link {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   padding: 20px 10px;
+   /* overflow-y: hidden; */
+   position: relative;
+   
+   border: 2px solid var(--clr-dark);
+   border-radius: 5px;
+   background-color: var(--clr-dark);
+   
+   transition: .2s all;
+}
+
+.contact-container .contact-link::before, 
+.contact-container .contact-link::after {
+   content: '';
+   
+   position: absolute;
+   z-index: -1;
+
+   width: 0;
+   height: 0;
+   
+   background-color: var(--clr-purple-soft);
+   
+   transition: .3s all ease-in-out;
+
+   -webkit-backface-visibility: hidden;
+   perspective: 1000; 
+   backface-visibility: hidden;
+   -webkit-perspective: 1000;
+}
+
+.contact-container .contact-link::before {
+   top: -5px;
+   left: -5px;
+   border-radius: 5px 0 0 0;
+}
+
+.contact-container .contact-link::after {
+   bottom: -5px;
+   right: -5px;
+   border-radius: 0 0 5px 0;
+}
+
+.contact-container .contact-link:hover::before {
+   width: 70%;
+   height: 80%;
+}
+
+.contact-container .contact-link:hover::after {
+   width: 70%;
+   height: 80%;
+}
+
+.contact-container .contact-link .content-wrapper {
+   display: flex;
+}
+
+
+.contact-container .contact-link:not(:last-child) {
+   margin-bottom: 20px;
+}
+
+.contact-container .contact-link .content-wrapper i {
+   font-size: 3rem;
+   color: var(--clr-purple-soft);
+   margin-right: 20px;
+}
+
+.contact-container .contact-link .title {
+   font-size: 1.5rem;
+   color: #fff;
+}
+
+.contact-container .contact-link .label {
+   color: #777;
+}
+
+.contact-container .contact-link .icons-wrapper .button {
+   font-size: 1.7rem;
+   color: var(--clr-purple-soft);
+}
+
+.contact-container .contact-link .icons-wrapper .button {
+   margin: 0 10px;
+   opacity: 0;
+   transition: all .3s ease-in-out;
+   transition-delay: .1s;
+}
+
+.contact-container .contact-link .icons-wrapper .button:hover {
+   color: var(--clr-purple-soft-hover);
+}
+
+.contact-container .contact-link .icons-wrapper a.button {
+   transform: translateY(-35px);
+   display: inline-block;
+}
+
+.contact-container .contact-link .icons-wrapper button.button {
+   transform: translateY(35px);
+}
+
+.contact-container .contact-link:hover .icons-wrapper .button {
+   transform: translateY(0px);
+   opacity: 1;
+}
+
+/* ######################################## */
+/* #              Form                    # */
+/* ######################################## */
+
+.form-wrapper {
+   width: 45%;
+}
+
+.form-group:not(:last-child) {
+   margin-bottom: 10px;
+}
+
+.form-group label {
+   display: inline-block;
+   padding: 0 10px 0 5px;
+   font-size: 1rem;
+   
+   transform: translate(10px, 30px);
+   transition: .2s all;
+   
+   color: var(--clr-purple-soft);
+   background-color: var(--clr-dark);
+   user-select: none;
+   cursor: text;
+
+   position: relative;
+   z-index: 2;
+}
+
+.form-group:focus-within label,
+.form-group label.input-has-value {
+   transform: translate(10px, 7px);
+}
+
+.form-group .form-field {
+   background-color: var(--clr-dark);
+   color: #fff;
+   
+   outline: 0;
+   border: 2px solid var(--clr-purple-soft);
+   border-radius: 5px;
+
+   width: 100%;
+   min-height: 40px;
+   
+   padding: 5px 10px;
+   font-size: 1rem;
+
+   transition: .1s all;
+   position: relative;
+}
+
+.form-group .form-field.is-invalid {
+   border: 2px solid #ff4c4c;
+   animation: shake .1s linear;
+   animation-iteration-count: 3;
+}
+
+@keyframes shake {
+   from {
+      left: -5px;
+   }
+   
+   to {
+      right: -5px;
+   }
+}
+
+.form-group textarea.form-field {
+   height: 120px;
+   padding-top: 15px;
+   resize: none;
+}
+
+.form-group .form-field.is-invalid:focus {
+   border: 2px solid #ff4c4c;
+   box-shadow: 2px 2px 0 #ff4c4c;
+}
+
+.form-group .form-field:focus {
+   border: 2px solid var(--clr-purple-soft-hover);
+   box-shadow: 2px 2px 0 #fff;
+}
+
+
+/* ######################################## */
+/* #              Footer                  # */
+/* ######################################## */
+
+.main-footer {
+   margin-top: 50px;
+   /* border-top: 2px solid var(--clr-purple-soft); */
+   color: #898989;
+}
+
+.main-footer hr {
+   height: 2px;
+   background: var(--clr-purple-soft);
+   border: 0;
+}
+
+.main-footer .text-wrapper {
+   display: flex;
+   justify-content: space-between;
+   margin: 20px 0;
+}
+
 
 @media (max-width: 900px) {
    .main-header #btn-mobile {

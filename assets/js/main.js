@@ -94,6 +94,76 @@
          title: 'React JS',
          body: 'Sei useState, e um pouquinho mais ai'
       },
+      {
+         name: 'bootstrap',
+         title: 'Bootstrap',
+         body: 'Melhor coisa pra fazer interface boladona :D'
+      },
+      {
+         name: 'responsive',
+         title: 'Responsividade',
+         body: 'Consigo fazer até usuário de galaxy fold ler, faz o teste nesse site ai pô'
+      },
+      {
+         name: 'php',
+         title: 'PHP',
+         body: 'Faço oq tu quiser!'
+      },
+      {
+         name: 'laravel',
+         title: 'Laravel',
+         body: 'O framework mais boladão de php q tem'
+      },
+      {
+         name: 'sql',
+         title: 'Banco de Dados Relacional',
+         body: 'MSSQL e MySQL'
+      },
+      {
+         name: 'node',
+         title: 'Node JS',
+         body: 'Hmmmmm node porra'
+      },
+      {
+         name: 'api',
+         title: 'API Rest',
+         body: 'Quer falar comigo? Faz um POST ae'
+      },
+      {
+         name: 'figma',
+         title: 'Figma',
+         body: 'Não é meu forte, mas consigo usar a ferramenta e também extrair layouts'
+      },
+      {
+         name: 'git',
+         title: 'Git',
+         body: 'Trabalho com git diariamente'
+      },
+      {
+         name: 'seo',
+         title: 'SEO (Search Engine Optimization)',
+         body: 'Quer falar comigo? Faz um POST ae'
+      },
+      {
+         name: 'azure',
+         title: 'Azure',
+         body: 'ja trampei com po'
+      },
+      {
+         name: 'devops',
+         title: 'Devops',
+         body: 'pipeline, devops boards, git'
+      },
+      {
+         name: 'soft-skills',
+         title: 'Soft Skills',
+         body: 'sou legal e xeroso'
+      },
+      {
+         name: 'english',
+         title: 'Inglês',
+         body: 'nice to meet you'
+      },
    ]
 
    const skillTitle = document.querySelector('#front-end-title')
@@ -103,22 +173,42 @@
 
    iconsFrontEndHover.forEach(icon => {
       
+      const accordionType = icon.getAttribute('data-accordion')
+
       icon.onmouseover = () => {
-         icon.querySelector('i').style.transform = 'scale(1.2)'
+         let childIcon = icon.querySelector('i, svg')
+
+         childIcon.style.transform = 'scale(1.1)'
+            
          
          let color = icon.getAttribute('data-icon-hover')
-         icon.style.color = color
+         if(childIcon.tagName == 'svg') {
+            childIcon.querySelector('path').style.fill = color
+         } else {
+            icon.style.color = color
+         }
 
          let skillName = icon.getAttribute('data-skill-name')   
          let skill = skills.find(skill => skill.name === skillName)
 
-         skillTitle.innerHTML  = skill.title
-         skillBody.innerHTML  = skill.body
+         document.querySelector(`#${accordionType}-title`).innerHTML = skill.title
+         document.querySelector(`#${accordionType}-body`).innerHTML  = skill.body
+         // skillBody.innerHTML  = skill.body
       }
       
       icon.onmouseleave = () => {
-         icon.style.color = 'var(--clr-purple-dark)'
-         icon.querySelector('i').style.transform = 'scale(1)'
+         let childIcon = icon.querySelector('i, svg')
+         
+         if(childIcon.tagName == 'svg') {
+            childIcon.querySelector('path').style.fill = 'var(--clr-purple-dark)'
+         } else {
+            icon.style.color = 'var(--clr-purple-dark)'
+         }
+
+         childIcon.style.transform = 'scale(1)'
+
+         document.querySelector(`#${accordionType}-title`).innerHTML = 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>'
+         document.querySelector(`#${accordionType}-body`).innerHTML  = '(É ilimitado e gratuito)'
       }
    })
 
@@ -128,5 +218,65 @@
       prevArrow: $('.portifolio-previous-arrow'),
       nextArrow: $('.portifolio-next-arrow'),
    })
+
+
+   const inputs = document.querySelectorAll('.form-field')
+   inputs.forEach(input => {
+      input.onblur = e => {
+         let div = input.parentElement
+         let label = div.querySelector('label')
+         
+         if(e.target.value == '') {
+            label.classList.remove('input-has-value')
+            return
+         }
+         
+         label.classList.add('input-has-value')
+      }
+   })
+
+
+   const form = document.querySelector('#contact-form')
+   const fields = document.querySelectorAll('input, textarea')
+   const btnSubmit = document.querySelector('#btn-submit')
+
+   form.onsubmit = e => {
+      e.preventDefault()
+      if(btnSubmit.hasAttribute('disabled'))
+         return
+
+      console.log('enviou')
+
+      let allFieldsHaveValue = true
+      fields.forEach(field => {
+         field.classList.remove('is-invalid')
+
+         if(field.value == '') {
+            allFieldsHaveValue = false
+            field.classList.add('is-invalid')
+         } 
+      })
+
+      btnWait()
+      setTimeout(() => {
+         btnWait(false)
+      }, 1000)
+      // if(allFieldsHaveValue)
+
+   }
+
+   function btnWait(wait = true) {
+      let btnSpan = btnSubmit.querySelector('span')
+
+      if(wait) {
+         btnSubmit.setAttribute('disabled', true)
+         btnSubmit.classList.add('disabled')
+         btnSpan.innerHTML = 'Enviando... <i class="fas fa-circle-notch fa-spin"></i>'
+      } else {
+         btnSubmit.removeAttribute('disabled', true)
+         btnSubmit.classList.remove('disabled')
+         btnSpan.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>'
+      }
+   }
 
 // })
