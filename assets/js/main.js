@@ -1,13 +1,16 @@
 // $(document).ready(function() {
 
-
-   const btnMobile = document.querySelector('#btn-mobile')
+   const headerMenu = document.querySelector('.header-menu')
+   const btnMobile  = document.querySelector('#btn-mobile')
+   
    btnMobile.onclick = function() {
       const isClicked = this.classList.contains('clicked')
       if(isClicked) {
          this.classList.remove('clicked')
+         headerMenu.classList.remove('open')
       } else {
          this.classList.add('clicked')
+         headerMenu.classList.add('open')
       }
    }
 

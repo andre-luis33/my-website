@@ -980,12 +980,126 @@ h5 small {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+   .container {
+      padding: 0 15px;
+   }
+
    .main-header #btn-mobile {
       display: flex;
    }
 
    .header-menu {
-      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      z-index: 400;
+
+      height: calc(100vh - 80px);
+      width: 100vw;
+      
+      background-color: var(--clr-purple-dark);
+      
+      transition: 
+         .3s .1s all ease-in-out
+      ;
+
+      transform: translateX(-200%);
+      opacity: 0;
    }
+
+   
+   .header-menu.open {
+      transform: skew(-16deg) translateX(-80px);
+      opacity: 1;
+      box-shadow: 50px 20px 5px rgba(0,0,0, .8);
+   }
+
+   .header-menu::before {
+      content: '';
+      height: 300px;
+      width: 300px;
+
+      position: absolute;
+      top: 0;
+      left: -200px;
+      background-color: var(--clr-purple-dark);
+   }
+
+   .header-menu ul li {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   
+   .header-menu.open ul li {
+      opacity: 1;
+      transform: translateY(0);
+
+      transition-delay: 0;
+      transition-property: transform, opacity;
+   }
+   
+   .header-menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      
+      padding-top: 50px;
+      transform: skew(16deg);
+   }
+
+   .header-menu ul li:not(:last-child) {
+      margin-bottom: 50px;
+   }
+
+   .header-menu.open ul li:nth-child(1) {
+      margin-right: 0px;
+      transition-duration: .4s;
+      transition-delay: .3s;
+   }
+   
+   .header-menu.open ul li:nth-child(2) {
+      margin-right: 20px;
+      transition-duration: .4s;
+      transition-delay: .6s;
+   }
+   
+   .header-menu.open ul li:nth-child(3) {
+      margin-right: 30px;
+      transition-duration: .4s;
+      transition-delay: .9s;
+   }
+   
+   .header-menu.open ul li:nth-child(4) {
+      margin-right: 60px;
+      transition-duration: .4s;
+      transition-delay: 1.2s;
+   }
+
+   .header-menu.open li:nth-child(1)::after {
+      transition-delay: .4s;
+   }
+   
+   .header-menu.open li:nth-child(2)::after {
+      transition-delay: .7s;
+   }
+   
+   .header-menu.open li:nth-child(3)::after {
+      transition-delay: 1s;
+   }
+   
+   .header-menu.open li:nth-child(4)::after {
+      transition-delay: 1.3s;
+   }
+
+   .header-menu a {
+      font-size: 1.5rem;
+   }
+
+   .header-menu.open li::after {
+      transition-duration: .2s;
+      transform: scaleX(1);
+      top: 30px;
+   }
+   
 }
