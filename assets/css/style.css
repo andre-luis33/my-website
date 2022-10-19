@@ -128,6 +128,7 @@ body {
    border-radius: 10px 0 10px 0;
    display: inline;
    cursor: pointer;
+   height: fit-content;
 }
 
 .btn-pushable.btn-purple {
@@ -181,11 +182,12 @@ body {
 .btn-wrapper {
    display: flex;
    flex-wrap: wrap;
+   gap: 12px;
 }
 
-.btn-wrapper :is(button, a):first-child {
+/* .btn-wrapper :is(button, a):first-child {
    margin-right: 15px;
-}
+} */
 
 .section-title {
    margin: 90px 0 60px 0;
@@ -503,7 +505,6 @@ body {
 
 .about-section .wrapper {
    display: flex;
-
    margin-bottom: 100px;
 }
 
@@ -531,21 +532,29 @@ body {
 
 .accordion {
    width: 100%;
-   padding: 20px;
-
+   
    border-radius: 5px 5px 0 0;
-
+   
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+   /* justify-content: space-between; */
    align-items: center;
-
+   
    background-color: var(--clr-purple-dark);
    color: #fff;
    box-shadow: 7px 7px 0 var(--clr-purple-soft);
    
-   cursor: pointer;
    margin-bottom: 45px;
+}
+
+.accordion header {
+   width: 100%;
+   cursor: pointer;
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px 20px 10px 20px;
 }
 
 .accordion .title {
@@ -568,7 +577,8 @@ body {
    width: 100%;
    display: flex;
 
-   padding-left: 10px;
+   margin: 0 0 15px 15px;
+   padding-left: 15px;
 
    border-left: 5px solid var(--clr-purple-soft);
    max-height: 0;
@@ -612,6 +622,10 @@ body {
    justify-content: center;
    
    margin: 0 21px 21px 0;
+}
+
+.icons-wrapper .mobile-description {
+   display: none;
 }
 
 .icons-wrapper .smaller-icon {
@@ -963,7 +977,6 @@ h5 small {
 
 .main-footer {
    margin-top: 50px;
-   /* border-top: 2px solid var(--clr-purple-soft); */
    color: #898989;
 }
 
@@ -985,17 +998,33 @@ h5 small {
       padding: 0 15px;
    }
 
+   .section-title {
+      margin: 60px 0 50px 0;
+   }
+
+   .section-title::after {
+      width: 20%;
+   }
+
+   .main-header {
+      height: 70px;
+   }
+
    .main-header #btn-mobile {
       display: flex;
    }
 
+   .header-container #main-logo {
+      width: 50px;
+   }
+
    .header-menu {
       position: absolute;
-      top: 80px;
+      top: 70px;
       left: 0;
       z-index: 400;
 
-      height: calc(100vh - 80px);
+      height: calc(100vh - 70px);
       width: 100vw;
       
       background-color: var(--clr-purple-dark);
@@ -1101,5 +1130,292 @@ h5 small {
       transform: scaleX(1);
       top: 30px;
    }
+
+   /* ######################################## */
+   /* #              Welcome                 # */
+   /* ######################################## */
+
+   .welcome-section {
+      height: 50vh;
+      background-position-y: 10%;
+   }
+
+   .welcome-section h1 {
+      font-size: 2rem;
+   }
+
+   .welcome-section h2 {
+      font-size: 1.2rem;
+      line-height: 26px;
+   }
+
    
+   /* ######################################## */
+   /* #              About                   # */
+   /* ######################################## */
+
+   .about-section .wrapper {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+   }
+
+   .about-section .wrapper .img {
+      width: 60%;
+      margin: 0 auto;
+   }
+
+   .about-section p {
+      font-size: 1.1rem;
+      line-height: 20px;
+
+      margin-top: 10px;
+      text-align: center;
+   }
+
+   .about-section .btn-wrapper {
+      justify-content: center;
+      gap: 10px;
+   }
+
+   
+   /* ######################################## */
+   /* #              Skills                  # */
+   /* ######################################## */
+
+   .accordion {
+      margin-bottom: 30px;
+   }
+   
+   .accordion header {
+      padding: 20px 10px 5px 10px;
+   }
+
+   .accordion .accordion-body {
+      margin-right: 15px;
+   }
+
+   .accordion :is(.title, .accordion-arrow) {
+      font-size: 1.15rem;
+   }
+
+   .accordion > .title i {
+      margin-right: 5px;
+   }
+
+   .accordion-body {
+      border-left: none;
+      padding-left: 0;
+   }
+
+   .accordion-body .text-content {
+      display: none;
+   }
+
+   .icons-wrapper {
+      justify-content: space-evenly;
+      gap: 10px;
+   }
+
+   .icons-wrapper .icon {
+      width: 95px;
+      height: 95px;
+
+      font-size: 3.5rem;
+      margin: 0;
+
+      transition: all .3s;
+   }
+   
+   .icons-wrapper .icon.icon-mobile-open {
+      height: fit-content;
+      width: 100%;
+
+      padding: 10px 5px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+   }
+
+   .icons-wrapper .icon-mobile-open .mobile-description {
+      font-size: 1.2rem;
+      text-align: center;
+
+      display: block;
+   }  
+
+   .icons-wrapper .smaller-icon {
+      font-size: 2.5rem;
+   }
+
+   .icons-wrapper .svg-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .icons-wrapper .svg-icon svg {
+      width: 80%;
+      height: 80%;
+   }
+
+   /* ######################################## */
+   /* #              Portifolio              # */
+   /* ######################################## */
+
+   .portfolio-container .wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   .portfolio-container .img {
+      margin: 0 20px;
+   }
+
+   .portfolio-container .img img {
+      max-width: 200px;
+   }
+
+   .portfolio-container .text-content {
+      padding: 0 20px;
+      width: 90%;
+   }
+
+   .portfolio-container .title {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 15px;
+   }
+
+   .portfolio-container .description {
+      font-size: 1rem;
+      text-align: center;
+   }
+
+   .portfolio-container .btn-wrapper {
+      justify-content: center;
+   }
+
+   .portfolio-container .btn-pushable span {
+      padding: 8px 15px;
+      font-size: 1.1rem;
+   }
+
+   .portifolio-previous-arrow {
+      left: 10px;
+   }
+
+   .portifolio-next-arrow {
+      right: 10px;
+   }
+
+   .slick-dots {
+      margin-top: 10px;
+   }
+
+   /* ######################################## */
+   /* #              Contato                 # */
+   /* ######################################## */
+
+   .contact-container .wrapper {
+      flex-wrap: wrap;
+   }
+   
+   .contact-container .links-wrapper {
+      width: 100%;
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   .contact-container .contact-link {
+      align-items: start;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+   }
+
+   .contact-container .contact-link :is(.text, .icons-wrapper) {
+      display: none;
+   }
+
+   .contact-container .contact-link .content-wrapper i {
+      font-size: 4rem;
+      margin-right: 10px;
+      transition: color .2s;
+   }
+
+   .contact-container .contact-link .content-wrapper i:hover {
+      color: var(--clr-purple-soft-hover);
+   }
+
+   .contact-container .contact-link::before,
+   .contact-container .contact-link::after {
+      display: none;
+   }
+
+
+   /* ######################################## */
+   /* #              Form                    # */
+   /* ######################################## */
+   
+   .form-wrapper {
+      width: 100%;
+   }
+   
+   .form-group {
+      margin-bottom: 0;
+   }
+   
+   .form-group:last-child {
+      margin-bottom: 15px;
+   }
+
+   .form-wrapper .btn-pushable {
+      width: 100%;
+   }
+   
+   .form-wrapper .btn-pushable span {
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+   }
+
+   /* ######################################## */
+   /* #              Footer                  # */
+   /* ######################################## */
+
+   .main-footer {
+      margin-top: 25px;
+   }
+
+   .main-footer .text-wrapper {
+      font-size: .8rem;
+      flex-wrap: wrap;
+
+      text-align: center;
+   }
+
+   .main-footer .text-wrapper p {
+      width: 100%;
+   }
+
+   .main-footer .text-wrapper p:last-child {
+      margin-top: 20px;
+   }
+
+}
+
+@media (max-width: 370px) {
+
+   .welcome-section h2 {
+      font-size: 1.1rem;
+   }
+
+   .accordion :is(.title, .accordion-arrow) {
+      font-size: 1rem;
+   }
 }

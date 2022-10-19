@@ -1,5 +1,7 @@
 // $(document).ready(function() {
 
+   const IS_MOBILE = window.innerWidth <= 768
+
    const headerMenu = document.querySelector('.header-menu')
    const btnMobile  = document.querySelector('#btn-mobile')
    
@@ -44,9 +46,16 @@
    const accordionArrows  = document.querySelectorAll('.accordion-arrow')
    const accordionBodys  = document.querySelectorAll('.accordion-body')
 
+   const closableTagsOnMobile = ['button', 'header', 'h4']
+
    accordions.forEach(accordion => {   
 
-      accordion.onclick = () => {
+      accordion.onclick = e => {
+         const currentTag = e.target.tagName.toLowerCase()
+         if(IS_MOBILE && !closableTagsOnMobile.includes(currentTag)) {
+            return
+         }
+
          let accordionArrow = accordion.querySelector('.accordion-arrow')
          let accordionBody = accordion.querySelector('.accordion-body')
 
@@ -69,8 +78,6 @@
    })
 
 
-
-   
    const skills = [
       {
          name: 'html',
@@ -172,35 +179,34 @@
    const skillTitle = document.querySelector('#front-end-title')
    const skillBody  = document.querySelector('#front-end-body')
 
-   const iconsFrontEndHover = document.querySelectorAll('[data-icon-hover]')
+   const skillIcons = document.querySelectorAll('.icon[data-icon-hover]')
 
-   iconsFrontEndHover.forEach(icon => {
+   skillIcons.forEach(icon => {
       
       const accordionType = icon.getAttribute('data-accordion')
 
       icon.onmouseover = () => {
-         let childIcon = icon.querySelector('i, svg')
+         const childIcon = icon.querySelector('i, svg')
 
          childIcon.style.transform = 'scale(1.1)'
             
          
-         let color = icon.getAttribute('data-icon-hover')
+         const color = icon.getAttribute('data-icon-hover')
          if(childIcon.tagName == 'svg') {
             childIcon.querySelector('path').style.fill = color
          } else {
             icon.style.color = color
          }
 
-         let skillName = icon.getAttribute('data-skill-name')   
-         let skill = skills.find(skill => skill.name === skillName)
+         const skillName = icon.getAttribute('data-skill-name')   
+         const { title, body } = skills.find(skill => skill.name === skillName)
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = skill.title
-         document.querySelector(`#${accordionType}-body`).innerHTML  = skill.body
-         // skillBody.innerHTML  = skill.body
+         document.querySelector(`#${accordionType}-title`).innerHTML = title
+         document.querySelector(`#${accordionType}-body`).innerHTML  = body
       }
       
       icon.onmouseleave = () => {
-         let childIcon = icon.querySelector('i, svg')
+         const childIcon = icon.querySelector('i, svg')
          
          if(childIcon.tagName == 'svg') {
             childIcon.querySelector('path').style.fill = 'var(--clr-purple-dark)'
@@ -213,6 +219,30 @@
          document.querySelector(`#${accordionType}-title`).innerHTML = 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>'
          document.querySelector(`#${accordionType}-body`).innerHTML  = '(É ilimitado e gratuito)'
       }
+
+      if(!IS_MOBILE) 
+         return
+
+      icon.onclick = () => {
+         skillIcons.forEach(skillIcon => skillIcon.classList.remove('icon-mobile-open'))
+         icon.classList.add('icon-mobile-open')
+
+         const childIcon = icon.querySelector('i, svg')
+                  
+         const color = icon.getAttribute('data-icon-hover')
+         if(childIcon.tagName == 'svg') {
+            childIcon.querySelector('path').style.fill = color
+         } else {
+            icon.style.color = color
+         }
+         
+         const skillName = icon.getAttribute('data-skill-name')
+         const { title, body } = skills.find(skill => skill.name === skillName)
+         
+         const description = icon.querySelector('.mobile-description')
+         description.innerHTML = body
+         description.style.color = color
+      }
    })
 
    $('.portfolio-wrapper').slick({
@@ -220,6 +250,7 @@
       speed: 400,
       prevArrow: $('.portifolio-previous-arrow'),
       nextArrow: $('.portifolio-next-arrow'),
+      responsive: true
    })
 
 
