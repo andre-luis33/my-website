@@ -82,57 +82,53 @@
       {
          name: 'html',
          title: 'HTML',
-         body: 'HTML semântico é comigo, tenho experiência em técnicas de SEO, estruturação e acessibilidade'
+         body: 'Possuo experiência vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).'
       },
       {
          name: 'css',
          title: 'CSS',
-         body: 'Manjo pra caralho, display flex ate o talo, responsivo boladão e fé'
+         body: 'Não existe site sem CSS, e assim como HTML, também possuo muita experiência com CSS, Flexbox, CSS Grid, Box Model, ... Além do design responsivo e aquele arquivozinho minificado também, que já são de praxe :D'
       },
       {
          name: 'js',
          title: 'Javascript',
-         body: 'Putz, fetch, async await, HOFs, a porra toda!!'
+         body: 'Essa é a minha parte favorita do front-end, onde toda a mágica acontece. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais'
       },
       {
          name: 'jquery',
          title: 'jQuery',
-         body: 'Manipulo a DOM melhor que tua mãe no fogão'
-      },
-      {
-         name: 'react',
-         title: 'React JS',
-         body: 'Sei useState, e um pouquinho mais ai'
+         body: 'Apesar de todo mundo considerar ele "deprecated", e eu saber me virar muito bem sem ele, não podia deixar de fora, amo esse cara de verdade... Por muito tempo tivemos um relacionamento forte, e usar javascript sem ele as vezes me dói, mas enfim, se um dia ele voltar (espero mt q volte), pode deixar comigo!'
       },
       {
          name: 'bootstrap',
          title: 'Bootstrap',
-         body: 'Melhor coisa pra fazer interface boladona :D'
+         body: 'Não sou refém dele, mas é muito bom saber que psoso usá-lo rs. Facilita muito a vida, muita gente não gosta de ficar customizando tabela e modal, e eu estou nessa lista ai, pois já usei também em muitos projetos.'
       },
       {
-         name: 'responsive',
-         title: 'Responsividade',
-         body: 'Consigo fazer até usuário de galaxy fold ler, faz o teste nesse site ai pô'
+         name: 'react',
+         title: 'React JS',
+         body: 'Da lista de skills, é o que eu tenho menos conhecimento, mas já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas e Context'
       },
+
       {
          name: 'php',
          title: 'PHP',
-         body: 'Faço oq tu quiser!'
+         body: 'Linguagem que eu domino e uso há mais de 3 anos. Comecei com PHP puro, e então fui evoluindo nessa stack que sempre me possibilitou fazer tudo. Funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC, etc.'
       },
       {
          name: 'laravel',
          title: 'Laravel',
-         body: 'O framework mais boladão de php q tem'
+         body: 'Não possuo tanta experiência, mas já suguei tanto do PHP puro, que não seria dificuldade nenhuma ter que trabalhar com esse framework lindo'
       },
       {
          name: 'sql',
          title: 'Banco de Dados Relacional',
-         body: 'MSSQL e MySQL'
+         body: 'Minha preferência de uso em projetos, sempre usei e tenho bastante experiência. Já usei MySQL, SQL Server, Postgres e SQLite. Minhas tabelas sempre tem chave primária e índice, pq sem isso nem é tabela pra mim. Relacionamentos (Many to Many is life) Transactions, Stored Procedures, Triggers, PK, FK, otimizações, etc.'
       },
       {
          name: 'node',
          title: 'Node JS',
-         body: 'Hmmmmm node porra'
+         body: 'Tecnologia que estou estudando no momento. Já usei profissionalmente e achei fantástica e poderosa. Pretendo me aprofundar mais e dominá-la no futuro, conseguindo gerar o .eslintrc.json sem olhar no stackoverflow'
       },
       {
          name: 'api',
@@ -147,17 +143,12 @@
       {
          name: 'git',
          title: 'Git',
-         body: 'Trabalho com git diariamente'
-      },
-      {
-         name: 'seo',
-         title: 'SEO (Search Engine Optimization)',
-         body: 'Quer falar comigo? Faz um POST ae'
+         body: 'Projeto sem versionamento é tipo armário sem gaveta, uma hora vai dar ruim. Sempre utilizei, tentando seguir as melhores práticas, convenções de nome de branch e commit messages. Também familiar com o gitflow de aplicações reais, com pull requests, estrutura de branchs, branch feature, hotfix, main, etc'
       },
       {
          name: 'azure',
          title: 'Azure',
-         body: 'ja trampei com po'
+         body: 'O meu maior projeto teve toda sua infraestrutura lá, então sou familiar com essa ferramenta de cloud. Já configurei Serviços de Aplicativos, com Pipelines dando suporte a CI/CD, Servidores Nginx, bancos de dados, Static Web Apps, SSH, etc.'
       },
       {
          name: 'devops',
@@ -245,6 +236,9 @@
       }
    })
 
+   if(IS_MOBILE) 
+      skillIcons[0].click()
+
    $('.portfolio-wrapper').slick({
       dots: true,
       speed: 400,
@@ -295,7 +289,6 @@
       setTimeout(() => {
          btnWait(false)
       }, 1000)
-      // if(allFieldsHaveValue)
 
    }
 
@@ -312,5 +305,28 @@
          btnSpan.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>'
       }
    }
+
+   function copyToClipboard(text) {
+      var input = document.createElement('input');
+      input.setAttribute('value', text);
+      document.body.appendChild(input);
+      input.select();
+      var result = document.execCommand('copy');
+      document.body.removeChild(input);
+      return result;
+   }
+
+   const btnCopy = document.querySelectorAll('[data-btn-copy]')
+   btnCopy.forEach(btn => {
+      btn.onclick = () => {
+         const linkElement = btn.previousElementSibling
+         const link = linkElement.href
+         copyToClipboard(link)
+         btn.innerHTML = '<i class="fas fa-check"></i>'
+         setTimeout(() => { 
+            btn.innerHTML = '<i class="fas fa-copy"></i>' 
+         }, 700)
+      }
+   })
 
 // })

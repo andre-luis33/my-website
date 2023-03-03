@@ -70,7 +70,7 @@
 
    <main>
       <section class="welcome-section" id="welcome">
-         <section class="container welcome-container">
+         <div class="container welcome-container">
             <div class="wrapper">
                <h1>Hello, World!</h1>
                <h2>
@@ -94,7 +94,7 @@
                   </a>
                </div>
             </div>
-         </section>
+         </div>
       </section>
 
       <section class="container about-section" id="about">
@@ -170,7 +170,7 @@
                      
                      <div class="icon" data-accordion="front-end" data-icon-hover="#1371B1" data-skill-name="css">
                         <i class="fab fa-css3"></i>
-                        <p class="mobile-description"></p>
+                        <p class="mobile-description">HTML semântico é comigo, tenho experiência em técnicas de SEO, estruturação e acessibilidade</p>
                      </div>
                      
                      <div class="icon" data-accordion="front-end" data-icon-hover="#EAD41C" data-skill-name="js">
@@ -192,11 +192,6 @@
 
                      <div class="icon" data-accordion="front-end" data-icon-hover="#5CCFEE" data-skill-name="react">
                         <i class="fab fa-react"></i>
-                        <p class="mobile-description"></p>
-                     </div>
-
-                     <div class="icon smaller-icon" data-accordion="front-end" data-icon-hover="var(--clr-purple-soft)" data-skill-name="responsive">
-                        <i class="fas fa-sitemap"></i>
                         <p class="mobile-description"></p>
                      </div>
                   </div>
@@ -236,12 +231,12 @@
                         <i class="fas fa-database"></i>
                         <p class="mobile-description"></p>
                      </div>
+                     <!-- <div class="icon smaller-icon" data-accordion="back-end" data-icon-hover="var(--clr-purple-soft)" data-skill-name="api">
+                        <i class="fas fa-cogs"></i>
+                        <p class="mobile-description"></p>
+                     </div> -->
                      <div class="icon" data-accordion="back-end" data-icon-hover="#89BB3C" data-skill-name="node">
                         <i class="fab fa-node-js"></i>
-                        <p class="mobile-description"></p>
-                     </div>
-                     <div class="icon smaller-icon" data-accordion="back-end" data-icon-hover="var(--clr-purple-soft)" data-skill-name="api">
-                        <i class="fas fa-cogs"></i>
                         <p class="mobile-description"></p>
                      </div>
                   </div>
@@ -269,14 +264,6 @@
                      </p>
                   </div>
                   <div class="icons-wrapper">
-                     <div class="icon" data-accordion="others" data-icon-hover="#2466F2" data-skill-name="seo">
-                        <i class="fab fa-searchengin"></i>
-                        <p class="mobile-description"></p>
-                     </div>
-                     <div class="icon" data-accordion="others" data-icon-hover="#1371B1" data-skill-name="figma">
-                        <i class="fab fa-figma"></i>
-                        <p class="mobile-description"></p>
-                     </div>
                      <div class="icon" data-accordion="others" data-icon-hover="#E44C30" data-skill-name="git">
                         <i class="fab fa-git-alt"></i>
                         <p class="mobile-description"></p>
@@ -291,6 +278,10 @@
                         <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M0 27.8086L7.01953 18.5438L33.2883 7.86333V0.147705L56.3227 16.9946L9.26484 26.1258V51.8344L0 49.1602L0 27.8086ZM75 13.9032V59.6907L57.0187 74.9977L27.9539 65.4516V74.9977L9.26484 51.8297L56.3227 57.4454V16.9922L75 13.9032Z" fill="#1A1A40"/>
                         </svg>
+                        <p class="mobile-description"></p>
+                     </div>
+                     <div class="icon" data-accordion="others" data-icon-hover="red" data-skill-name="figma">
+                        <i class="fab fa-figma"></i>
                         <p class="mobile-description"></p>
                      </div>
                      <div class="icon" data-accordion="others" data-icon-hover="#F2D115" data-skill-name="soft-skills">
@@ -321,7 +312,7 @@
 
          <div class="portfolio-wrapper">
             <div class="wrapper to-do-list">
-               <a class="img" href="https://dbest-to-do-app.herokuapp.com/" target="_blank">
+               <a class="img" href=https://to-do-app-nine-psi.vercel.app/" target="_blank">
                   <img src="assets/img/to-do-list.png" alt="Projeto Lista de Tarefas">
                </a>
       
@@ -331,11 +322,10 @@
                   </h4>
                   <p class="description">
                      To Do List feito com o intuinto de aprimorar os conhecimentos em <span class="text-purple-soft bold">React</span>. Os items são salvados no local storage. Também foi implementado um dark mode.
-                     A hospegadem dele é no heroku, então caso demore a abrir, é por causa do cold time deles <span class="text-purple-soft"><i class="far fa-grimace"></i></span>
                   </p>
       
                   <div class="btn-wrapper">
-                     <a href="https://dbest-to-do-app.herokuapp.com/" target="_blank" class="btn-pushable btn-purple">
+                     <a href=https://to-do-app-nine-psi.vercel.app/" target="_blank" class="btn-pushable btn-purple">
                         <span>
                            Live Demo
                            <i class="fas fa-external-link-alt"></i>
@@ -382,6 +372,37 @@
                   </div>
                </div>
             </div>
+
+            <div class="wrapper web-desktop">
+               <a class="img" href="https://andre-luis33.github.io/web-desktop/" target="_blank" >
+                  <img src="assets/img/web-desktop.png" alt="Projeto Validador de Senha">
+               </a>
+      
+               <div class="text-content">
+                  <h4 class="title">
+                     Web Desktop
+                  </h4>
+                  <p class="description">
+                     Área de trabalho na web, para treinar os conhecimentos de javascript
+                  </p>
+      
+                  <div class="btn-wrapper">
+                     <a href="https://andre-luis33.github.io/web-desktop/" target="_blank" class="btn-pushable btn-purple">
+                        <span>
+                           Live Demo
+                           <i class="fas fa-external-link-alt"></i>
+                        </span>
+                     </a>
+      
+                     <a class="btn-pushable btn-white">
+                        <span>
+                           Ver Código
+                           <i class="fab fa-github"></i>
+                        </span>
+                     </a>
+                  </div>
+               </div>
+            </div>
          </div>
       </section>
 
@@ -405,10 +426,10 @@
                   </div>
 
                   <div class="icons-wrapper">
-                     <a class="button" href="https://github.com/andre-luis33/">
+                     <a class="button" target="_blank" href="https://github.com/andre-luis33/">
                         <i class="fas fa-external-link-alt"></i>
                      </a>
-                     <button class="button">
+                     <button class="button" data-btn-copy>
                         <i class="fas fa-copy"></i>
                      </button>
                   </div>
@@ -426,10 +447,10 @@
                   </div>
 
                   <div class="icons-wrapper">
-                     <a class="button" href="">
+                     <a class="button" target="_blank" href="https://www.linkedin.com/in/andre-luis-dev/">
                         <i class="fas fa-external-link-alt"></i>
                      </a>
-                     <button class="button">
+                     <button class="button" data-btn-copy>
                         <i class="fas fa-copy"></i>
                      </button>
                   </div>
@@ -450,7 +471,7 @@
                      <a class="button" href="">
                         <i class="fas fa-external-link-alt"></i>
                      </a>
-                     <button class="button">
+                     <button class="button" data-btn-copy>
                         <i class="fas fa-copy"></i>
                      </button>
                   </div>
@@ -471,7 +492,7 @@
                      <a class="button" href="">
                         <i class="fas fa-external-link-alt"></i>
                      </a>
-                     <button class="button">
+                     <button class="button" data-btn-copy>
                         <i class="fas fa-copy"></i>
                      </button>
                   </div>
@@ -500,7 +521,6 @@
                         Enviar Mensagem
                         <i class="fas fa-paper-plane"></i>
                      </span>
-                     
                   </button>
                </form>
             </div>
