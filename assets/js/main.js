@@ -244,7 +244,8 @@
       speed: 400,
       prevArrow: $('.portifolio-previous-arrow'),
       nextArrow: $('.portifolio-next-arrow'),
-      responsive: true
+      responsive: true,
+      lazyLoad: 'ondemand',
    })
 
 
@@ -328,5 +329,40 @@
          }, 700)
       }
    })
+
+
+   // ###################### INTERSECTION OBSERVER ###############################
+
+   const lazyElements = document.querySelectorAll('[data-lazy]')
+
+   const options = {
+      threshold: 0,
+      rootMargin: "-80px 0px -120px 0px"
+   }
+
+   function lazyLoad (target) {
+      const io = new IntersectionObserver((entries, observer) => {
+   
+         entries.forEach(entry => {
+            const element = entry.target
+   
+            if(entry.isIntersecting) {
+               
+               element.classList.add('fade-completed')
+
+               const transitionDuration = element.getAttribute('data-lazy') || 400
+               element.style.transitionDuration = `${transitionDuration}ms`
+               
+               io.unobserve(target)
+            }
+         })
+   
+      }, options)
+
+      io.observe(target)
+   }
+
+   lazyElements.forEach(lazyLoad)
+
 
 // })

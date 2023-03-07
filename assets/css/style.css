@@ -225,6 +225,39 @@ body {
 
 
 /* ######################################## */
+/* #        Lazy Load Animation           # */
+/* ######################################## */
+
+[data-lazy] {
+   opacity: 0;
+   transition-property: all;
+   transition-timing-function: ease-out;
+   visibility: hidden;
+}
+
+[data-lazy].fade-left {
+   transform: translateX(-50px);
+}
+
+[data-lazy].fade-right {
+   transform: translateX(50px);
+}
+
+[data-lazy].fade-top {
+   transform: translateY(-25px);
+}
+
+[data-lazy].fade-bottom {
+   transform: translateY(50px);
+}
+
+[data-lazy].fade-completed {
+   transform: unset;
+   opacity: 1;
+   visibility: visible;
+}
+
+/* ######################################## */
 /* #              Header                  # */
 /* ######################################## */
 
