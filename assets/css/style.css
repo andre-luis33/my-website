@@ -31,6 +31,7 @@ ul {
 
 html, body {
    min-height: 100%;
+   overflow-x: hidden;
 }
 
 button {
@@ -1007,6 +1008,35 @@ h5 small {
    box-shadow: 2px 2px 0 #fff;
 }
 
+.form-wrapper .form-feedback {
+   margin-block: 10px 20px;
+   font-style: italic;
+
+   visibility: hidden;
+   transform: translateY(40px);
+   opacity: 0;
+
+   transition: .3s ease all;
+}
+
+.form-wrapper :is(.form-feedback.success, .form-feedback.error) {
+   opacity: 1;
+   transform: translateY(0);
+   visibility: visible;
+}
+
+.form-wrapper .form-feedback.success {
+   color: rgb(64, 213, 64);
+}
+
+.form-wrapper .form-feedback.error {
+   color: rgb(171, 23, 23);
+}
+
+.form-wrapper .form-feedback.error a {
+   text-decoration: underline;
+   color: rgb(43, 146, 230);
+}
 
 /* ######################################## */
 /* #              Footer                  # */
@@ -1426,6 +1456,11 @@ h5 small {
       font-size: 1rem;
       display: flex;
       justify-content: center;
+   }
+
+   .form-wrapper .form-feedback {
+      text-align: center;
+      font-size: .95rem;
    }
 
    /* ######################################## */

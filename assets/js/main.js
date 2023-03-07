@@ -248,6 +248,10 @@
       lazyLoad: 'ondemand',
    })
 
+   // ###################### CONTACT FORM ###############################
+
+   const API_URL = 'http://localhost:3000/mail'
+
 
    const inputs = document.querySelectorAll('.form-field')
    inputs.forEach(input => {
@@ -274,8 +278,6 @@
       if(btnSubmit.hasAttribute('disabled'))
          return
 
-      console.log('enviou')
-
       let allFieldsHaveValue = true
       fields.forEach(field => {
          field.classList.remove('is-invalid')
@@ -286,10 +288,40 @@
          } 
       })
 
+      if(!allFieldsHaveValue) {
+         return
+      }
+
+      const name = form.querySelector('#name').value
+      const email = form.querySelector('#email').value
+      const message = form.querySelector('#message').value
+
       btnWait()
-      setTimeout(() => {
+      const config = {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({name, email, message})
+      }
+
+      try {
+         fetch(API_URL, config)
+            .then(res => {
+               if(!res.ok || res.status != 201) {
+                  throw new Error('Request failed')
+               }
+
+               return res.json()
+            })
+            .then(() => formFeedback('success'))
+            .catch(() => formFeedback('error'))
+            .finally(() => btnWait(false))
+
+      } catch {
+         formFeedback('error')
          btnWait(false)
-      }, 1000)
+      }
 
    }
 
@@ -306,6 +338,25 @@
          btnSpan.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>'
       }
    }
+
+   const formFeedbackElement = form.querySelector('.form-feedback')
+
+   function formFeedback(feedback) {
+      formFeedbackElement.classList.remove('success')
+      formFeedbackElement.classList.remove('error')
+      
+      if(feedback === 'success') {
+         formFeedbackElement.textContent = 'Formulário enviado com sucesso! Obrigado :)'
+         formFeedbackElement.classList.add('success')
+         form.reset()
+      } else {
+         formFeedbackElement.innerHTML = 'Ooops, deu algum erro no serviço de e-mail :( <br> <a href="https://wa.me/5521974480796?text=Ol%C3%A1+andr%C3%A9%2C+vim+do+seu+portf%C3%B3lio%21">Clique aqui para ir para o whatsapp</a>'
+         formFeedbackElement.classList.add('error')
+      }
+
+   }
+
+   // ###################### COPY CLIPBOARD ###############################
 
    function copyToClipboard(text) {
       var input = document.createElement('input');
