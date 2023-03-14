@@ -153,7 +153,7 @@
       {
          name: 'devops',
          title: 'Devops',
-         body: 'pipeline, devops boards, git'
+         body: 'Implantei a ferramenta em projetos profissionais, dando suporte ao life-cycle de todo o projeto, automatizando as etapas. Desde a criação de cards, com os requisitos, etc. no Azure Boards, Versionamento do código no Azure Repos, e CI/CD com Azure Pipelines'
       },
       {
          name: 'soft-skills',
