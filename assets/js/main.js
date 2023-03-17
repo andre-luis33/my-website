@@ -163,7 +163,7 @@
       {
          name: 'english',
          title: 'Inglês',
-         body: 'nice to meet you'
+         body: 'Whenever I fill out a form, I always mark the fluent option, because that\'s true. I am fully capable of listening/talking/writing in english, thanks to games and lots of netflix hours, but chill out, my english can get very professional as needed. Want proof? I wrote this without google translator :D (i swear...)'
       },
    ]
 
