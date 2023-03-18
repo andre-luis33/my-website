@@ -138,7 +138,7 @@
       {
          name: 'figma',
          title: 'Figma',
-         body: 'Não é meu forte, mas consigo usar a ferramenta e também extrair layouts'
+         body: 'Consigo manipular a experiência tranquilamente, mas desenvolver layout não é meu forte. Meu uso profissional envolve o desenvolvimento dos layouts propostos pelas equipes de design =)'
       },
       {
          name: 'git',
@@ -158,7 +158,7 @@
       {
          name: 'soft-skills',
          title: 'Soft Skills',
-         body: 'sou legal e xeroso'
+         body: 'Sou bastante comunicativo, versátil, solícito, organizado e criativo. Adoro trabalhar em equipe, se ajudando para a resolução de problemas e realmente tedo a sensação de ser uma pessoa essencial para o time.'
       },
       {
          name: 'english',
@@ -215,7 +215,11 @@
          return
 
       icon.onclick = () => {
-         skillIcons.forEach(skillIcon => skillIcon.classList.remove('icon-mobile-open'))
+         skillIcons.forEach(skillIcon => {
+            skillIcon.classList.remove('icon-mobile-open')
+            skillIcon.style.color = 'var(--clr-purple-dark)'
+         })
+
          icon.classList.add('icon-mobile-open')
 
          const childIcon = icon.querySelector('i, svg')

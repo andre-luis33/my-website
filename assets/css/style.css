@@ -548,6 +548,10 @@ body {
    flex-shrink: 0;
 }
 
+.about-section .wrapper .img img {
+   border-radius: 15px;
+}
+
 .about-section p {
    color: #fff;
    font-size: 1.4rem;
@@ -750,6 +754,10 @@ h5 small {
 .portfolio-container .img img {
    border-radius: 5px;
    max-width: 300px;
+}
+
+.portfolio-container .img.img-tall img {
+   height: 230px;
 }
 
 .portfolio-container .text-content {
@@ -1059,8 +1067,12 @@ h5 small {
    margin: 20px 0;
 }
 
+/* ######################################## */
+/* #               MOBILE                 # */
+/* ######################################## */
 
 @media (max-width: 768px) {
+
    .container {
       padding: 0 15px;
    }
@@ -1309,7 +1321,7 @@ h5 small {
    }
 
    .icons-wrapper .icon-mobile-open .mobile-description {
-      font-size: 1.2rem;
+      font-size: .9rem;
       text-align: center;
 
       display: block;
@@ -1350,6 +1362,10 @@ h5 small {
 
    .portfolio-container .img img {
       max-width: 200px;
+   }
+
+   .portfolio-container .img.img-tall img {
+      height: unset;
    }
 
    .portfolio-container .text-content {
