@@ -254,7 +254,7 @@
 
    // ###################### CONTACT FORM ###############################
 
-   const API_URL = 'http://localhost:3000/mail'
+   const API_URL = 'https://portfolio-mailer-qe09.onrender.com/mail'
 
 
    const inputs = document.querySelectorAll('.form-field')
