@@ -56,22 +56,22 @@
 
 
 
-   const accordions = document.querySelectorAll('.accordion')
+   const accordionsHeaders = document.querySelectorAll('.accordion header')
    const accordionArrows  = document.querySelectorAll('.accordion-arrow')
    const accordionBodys  = document.querySelectorAll('.accordion-body')
 
    const closableTagsOnMobile = ['button', 'header', 'h4']
 
-   accordions.forEach(accordion => {   
+   accordionsHeaders.forEach(accordionHeader => {   
 
-      accordion.onclick = e => {
-         const currentTag = e.target.tagName.toLowerCase()
-         if(IS_MOBILE && !closableTagsOnMobile.includes(currentTag)) {
-            return
-         }
+      accordionHeader.onclick = e => {
+         // const currentTag = e.target.tagName.toLowerCase()
+         // if(IS_MOBILE && !closableTagsOnMobile.includes(currentTag)) {
+         //    return
+         // }
 
-         let accordionArrow = accordion.querySelector('.accordion-arrow')
-         let accordionBody = accordion.querySelector('.accordion-body')
+         let accordionArrow = accordionHeader.querySelector('.accordion-arrow')
+         let accordionBody = accordionHeader.nextElementSibling
 
          let bodyIsOpen = accordionBody.classList.contains('show')
 
