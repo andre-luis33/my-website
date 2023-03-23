@@ -385,7 +385,7 @@ body {
    height: 70vh;
    overflow: hidden;
 
-   background-image: url('../img/setup.jpg');
+   background-image: url('../img/setup.webp');
    background-size: 80%;
    background-repeat: no-repeat;
    background-position-y: 70%;
@@ -754,6 +754,10 @@ h5 small {
 .portfolio-container .img img {
    border-radius: 5px;
    max-width: 300px;
+}
+
+.portfolio-container .img video {
+   max-width: 400px;
 }
 
 .portfolio-container .img.img-tall img {
