@@ -8,13 +8,27 @@
    btnMobile.onclick = function() {
       const isClicked = this.classList.contains('clicked')
       if(isClicked) {
-         this.classList.remove('clicked')
-         headerMenu.classList.remove('open')
+         closeHeaderMenu()
       } else {
-         this.classList.add('clicked')
-         headerMenu.classList.add('open')
+         openHeaderMenu()
       }
    }
+
+   function openHeaderMenu() {
+      btnMobile.classList.add('clicked')
+      headerMenu.classList.add('open')
+   }
+   
+   function closeHeaderMenu() {
+      btnMobile.classList.remove('clicked')
+      headerMenu.classList.remove('open')
+   }
+   
+   const headerLinks = document.querySelectorAll('.header-menu a')
+   headerLinks.forEach(link => {
+      link.onclick = closeHeaderMenu
+   })
+
 
    function getAge(date) {
       let today = new Date()
