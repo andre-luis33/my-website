@@ -1372,6 +1372,10 @@ h5 small {
       height: unset;
    }
 
+   .portfolio-container .img video {
+      max-width: 250px;
+   }
+
    .portfolio-container .text-content {
       padding: 0 20px;
       width: 90%;

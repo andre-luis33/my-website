@@ -16,11 +16,15 @@
 
    function openHeaderMenu() {
       btnMobile.classList.add('clicked')
+      btnMobile.setAttribute('aria-expanded', 'true') // accessibility purpose
+
       headerMenu.classList.add('open')
    }
    
    function closeHeaderMenu() {
       btnMobile.classList.remove('clicked')
+      btnMobile.setAttribute('aria-expanded', 'false') // accessibility purpose
+
       headerMenu.classList.remove('open')
    }
    
