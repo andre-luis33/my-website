@@ -270,7 +270,11 @@ body {
    top: 0;
    z-index: 500;
    
-   border-bottom: 1px solid var(--clr-purple-light);
+   /* border-bottom: 1px solid var(--clr-purple-light); */
+   -webkit-box-shadow: -1px 8px 7px -6px rgba(122,11,192,1);
+   -moz-box-shadow: -1px 8px 7px -6px rgba(122,11,192,1);
+   box-shadow: -1px 8px 7px -6px rgba(122,11,192,1);
+
    background-color: var(--clr-dark);
 }
 
