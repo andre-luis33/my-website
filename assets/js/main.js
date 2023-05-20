@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
    const IS_MOBILE = window.innerWidth <= 768
 
@@ -272,6 +272,7 @@
 
    // ###################### CONTACT FORM ###############################
 
+   const API_BASE_URL = 'https://portfolio-mailer-qe09.onrender.com/'
    const API_URL = 'https://portfolio-mailer-qe09.onrender.com/mail'
 
 
@@ -378,6 +379,20 @@
 
    }
 
+   /**
+    * API has a cold start where it is hosted, so when a user comes to the website, it hits the API to start it
+    */
+   async function startApiService() {
+      try {
+         const response = await fetch(API_BASE_URL)
+         const json = response.json()
+      } catch (error) {
+         console.log(error);
+      }
+   }
+
+   startApiService()
+
    // ###################### COPY CLIPBOARD ###############################
 
    function copyToClipboard(text) {
@@ -438,4 +453,4 @@
    lazyElements.forEach(lazyLoad)
 
 
-// })
+})
