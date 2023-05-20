@@ -56,8 +56,7 @@ button.disabled span {
 
 
 :root {
-   --clr-dark: #06050E;
-   
+
    --clr-purple: #270082;
 
    --clr-purple-dark: #1A1A40;
@@ -67,6 +66,18 @@ button.disabled span {
 
    --clr-purple-soft: #8367C7;
    --clr-purple-soft-hover: #6d44d4;
+
+}
+
+
+html.dark-mode {
+   --clr-dark: #0b091a;
+   --clr-skils-icon: #1A1A40;
+}
+
+html.light-mode {
+   --clr-dark: #fff;
+   --clr-skils-icon: #fff;
 }
 
 body {
@@ -74,7 +85,7 @@ body {
 }
 
 /* ######################################## */
-/* #              Components              # */
+/* #            Utility classes           # */
 /* ######################################## */
 
 .bg-dark {
@@ -140,6 +151,14 @@ body {
    background-color: var(--clr-purple-soft);
 }
 
+html.light-mode :is(.btn-pushable.btn-purple, .btn-pushable.btn-white) {
+   background-color: var(--clr-purple);
+
+   -webkit-box-shadow: -1px 8px 7px -6px rgba(122,11,192,1);
+   -moz-box-shadow: -1px 8px 7px -6px rgba(122,11,192,1);
+   box-shadow: -1px 7px 5px -6px var(--clr-purple);
+}
+
 .btn-pushable.btn-purple span {
    background-color: var(--clr-purple-soft);
    color: #fff;
@@ -148,6 +167,10 @@ body {
 .btn-pushable.btn-white span {
    background-color: #fff;
    color: var(--clr-purple-soft);
+}
+
+html.light-mode .btn-pushable.btn-white span {
+   background-color: #eee;
 }
 
 .btn-pushable span {
@@ -191,12 +214,16 @@ body {
 } */
 
 .section-title {
-   margin: 90px 0 60px 0;
+   margin: 60px 0 60px 0;
    color: #fff;
 
    font-size: 2rem;
    text-align: center;
    position: relative;
+}
+
+html.light-mode .section-title {
+   color: var(--clr-purple-light);
 }
 
 .section-title::after {
@@ -214,6 +241,10 @@ body {
 
    border-radius: 10px;
    background-color: var(--clr-purple-soft);
+}
+
+html.light-mode .section-title::after {
+   background-color: var(--clr-purple);
 }
 
 .bold {
@@ -305,8 +336,16 @@ body {
    color: var(--clr-purple-soft);
 }
 
+html.light-mode .header-menu ul a {
+   color: var(--clr-purple-light);
+}
+
 .header-menu ul a:hover {
    color: var(--clr-purple-light);
+}
+
+html.light-mode .header-menu ul a:hover {
+   color: var(--clr-purple);
 }
 
 .header-menu ul a i {
@@ -337,6 +376,10 @@ body {
    transform-origin: right;
    transform: scaleX(0);
    
+}
+
+html.light-mode li::after {
+   background: linear-gradient(89.34deg, var(--clr-purple) 6.18%, var(--clr-purple-dark) 89.94%);
 }
 
 .header-menu li:hover::after {
@@ -551,14 +594,34 @@ body {
    flex-shrink: 0;
 }
 
+
 .about-section .wrapper .img img {
    border-radius: 15px;
+   transition: all .3s;
+
+   -webkit-box-shadow: 6px 6px 8px -6px  var(--clr-purple);
+   -moz-box-shadow: 6px 6px 8px -6px  var(--clr-purple);
+   box-shadow: 6px 6px 8px -6px var(--clr-purple);
+}
+
+
+.about-section .wrapper .img img:hover {
+   transform: scale(0.9) translateY(-10px);
+   border-radius: 50%;
 }
 
 .about-section p {
    color: #fff;
    font-size: 1.4rem;
    margin-bottom: 15px;
+}
+
+html.light-mode .about-section p {
+   color: var(--clr-purple-light);
+}
+
+html.light-mode .about-section p strong {
+   color: var(--clr-purple);
 }
 
 .about-section .btn-purple {
@@ -588,6 +651,13 @@ body {
    margin-bottom: 45px;
 }
 
+html.light-mode .accordion {
+   background-color: #fff;
+   color: var(--clr-purple);
+   border: 1px solid var(--clr-purple-soft);
+}
+
+
 .accordion header {
    width: 100%;
    cursor: pointer;
@@ -596,6 +666,13 @@ body {
    align-items: center;
    justify-content: space-between;
    padding: 20px;
+
+   transition: .2s all;
+}
+
+
+html.light-mode .accordion header:hover {
+   background-color: #dedede;
 }
 
 .accordion .title {
@@ -604,6 +681,11 @@ body {
 
 .accordion > .title i {
    margin-right: 20px;
+}
+
+html.light-mode .accordion > .title i,
+html.light-mode .accordion .accordion-arrow {
+   color: var(--clr-purple);
 }
 
 .accordion .accordion-arrow {
@@ -667,6 +749,11 @@ body {
    justify-content: center;
    
    margin: 0 21px 21px 0;
+}
+
+html.light-mode .icons-wrapper .icon {
+   background-color: var(--clr-purple-soft);
+   color: #fff;
 }
 
 .icons-wrapper .mobile-description {
@@ -759,6 +846,12 @@ h5 small {
    max-width: 300px;
 }
 
+html.light-mode .portfolio-container .img :is(img, video) {
+   -webkit-box-shadow: 6px 8px 10px -6px  var(--clr-purple);
+   -moz-box-shadow: 6px 8px 10px -6px  var(--clr-purple);
+   box-shadow: 6px 8px 10px -6px var(--clr-purple);
+}
+
 .portfolio-container .img video {
    max-width: 400px;
 }
@@ -777,9 +870,21 @@ h5 small {
    margin-bottom: 15px;
 }
 
+html.light-mode .portfolio-container .title {
+   color: var(--clr-purple);
+}
+
 .portfolio-container .description {
    font-size: 1.2rem;
    margin-bottom: 15px;
+}
+
+html.light-mode .portfolio-container .description {
+   color: var(--clr-purple-light);
+}
+
+html.light-mode .portfolio-container .description strong{
+   color: var(--clr-purple);
 }
 
 .portfolio-container .btn-wrapper {
@@ -833,7 +938,6 @@ h5 small {
    align-items: center;
 
    padding: 20px 10px;
-   /* overflow-y: hidden; */
    position: relative;
    
    border: 2px solid var(--clr-dark);
@@ -905,8 +1009,17 @@ h5 small {
    color: #fff;
 }
 
+html.light-mode .contact-container .contact-link .title {
+   color: var(--clr-purple-light);
+   font-weight: bold;
+}
+
 .contact-container .contact-link .label {
    color: #777;
+}
+
+html.light-mode .contact-container .contact-link .label {
+   color: var(--clr-purple-soft);
 }
 
 .contact-container .contact-link .icons-wrapper .button {
@@ -991,6 +1104,10 @@ h5 small {
    position: relative;
 }
 
+html.light-mode .form-group .form-field {
+   color: var(--clr-purple);
+}
+
 .form-group .form-field.is-invalid {
    border: 2px solid #ff4c4c;
    animation: shake .1s linear;
@@ -1072,6 +1189,10 @@ h5 small {
    display: flex;
    justify-content: space-between;
    margin: 20px 0;
+}
+
+html.light-mode .main-footer .text-wrapper {
+   color: var(--clr-purple);
 }
 
 /* ######################################## */

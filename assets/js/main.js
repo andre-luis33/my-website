@@ -221,9 +221,9 @@ $(document).ready(function() {
          const childIcon = icon.querySelector('i, svg')
          
          if(childIcon.tagName == 'svg') {
-            childIcon.querySelector('path').style.fill = 'var(--clr-purple-dark)'
+            childIcon.querySelector('path').style.fill = 'var(--clr-skils-icon)'
          } else {
-            icon.style.color = 'var(--clr-purple-dark)'
+            icon.style.color = 'var(--clr-skils-icon)'
          }
 
          childIcon.style.transform = 'scale(1)'
@@ -238,7 +238,7 @@ $(document).ready(function() {
       icon.onclick = () => {
          skillIcons.forEach(skillIcon => {
             skillIcon.classList.remove('icon-mobile-open')
-            skillIcon.style.color = 'var(--clr-purple-dark)'
+            skillIcon.style.color = 'var(--clr-skils-icon)'
          })
 
          icon.classList.add('icon-mobile-open')
@@ -264,14 +264,17 @@ $(document).ready(function() {
    if(IS_MOBILE) 
       skillIcons[0].click()
 
-   $('.portfolio-wrapper').slick({
-      dots: true,
-      speed: 400,
-      prevArrow: $('.portifolio-previous-arrow'),
-      nextArrow: $('.portifolio-next-arrow'),
-      responsive: true,
-      lazyLoad: 'ondemand',
-   })
+
+   setTimeout(() => {
+      $('.portfolio-wrapper').slick({
+         dots: true,
+         speed: 400,
+         prevArrow: $('.portifolio-previous-arrow'),
+         nextArrow: $('.portifolio-next-arrow'),
+         responsive: true,
+         lazyLoad: 'ondemand',
+      })
+   }, 300)
 
    // ###################### CONTACT FORM ###############################
 
@@ -433,7 +436,7 @@ $(document).ready(function() {
 
    const options = {
       threshold: 0,
-      rootMargin: "-80px 0px -120px 0px"
+      rootMargin: "-80px 0px -80px 0px"
    }
 
    function lazyLoad (target) {
