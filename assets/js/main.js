@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
-   const ENVIROMENT = window.location.origin.includes('127.0.0.1') ? 'prod' : 'dev'
+   const ENVIROMENT = window.location.origin.includes('127.0.0.1') ? 'dev' : 'prod'
    const IS_MOBILE = window.innerWidth <= 768
+
+   console.log(ENVIROMENT);
 
    const headerMenu = document.querySelector('.header-menu')
    const btnMobile  = document.querySelector('#btn-mobile')
