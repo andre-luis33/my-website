@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+   const ENVIROMENT = window.location.origin.includes('127.0.0.1') ? 'prod' : 'dev'
    const IS_MOBILE = window.innerWidth <= 768
 
    const headerMenu = document.querySelector('.header-menu')
@@ -272,7 +273,6 @@ $(document).ready(function() {
 
    // ###################### CONTACT FORM ###############################
 
-   const API_BASE_URL = 'https://portfolio-mailer-qe09.onrender.com/'
    const API_URL = 'https://portfolio-mailer-qe09.onrender.com/mail'
 
 
@@ -379,10 +379,16 @@ $(document).ready(function() {
 
    }
 
+   const API_BASE_URL = 'https://portfolio-mailer-qe09.onrender.com/'
+   
+
    /**
     * API has a cold start where it is hosted, so when a user comes to the website, it hits the API to start it
     */
    async function startApiService() {
+      if(ENVIROMENT === 'dev') 
+         return
+
       try {
          const response = await fetch(API_BASE_URL)
          const json = response.json()
