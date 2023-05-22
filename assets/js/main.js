@@ -463,4 +463,4 @@
    lazyElements.forEach(lazyLoad)
 
 
-})
+})()
