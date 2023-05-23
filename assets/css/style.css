@@ -320,6 +320,12 @@ html.light-mode .section-title::after {
    align-items: center;
 }
 
+.main-header .menu-wrapper {
+   display: flex;
+   align-items: center;
+   column-gap: 30px;
+}
+
 .header-menu ul {
    display: flex;
    align-items: center;
@@ -421,6 +427,47 @@ html.light-mode li::after {
    transform: rotate(-45deg) translate(4px, -9px);
 }
 
+.main-header #btn-toggle-theme {
+   background-color: #ddd;
+   height: 30px;
+   width: 65px;
+   border-radius: 25px;
+   
+   position: relative;
+}
+
+.main-header #btn-toggle-theme i {
+   background-color: #fff;
+   color: rgb(221, 201, 13);
+
+   /* font-size: 1.1rem; */
+
+   height: 24px;
+   width: 24px;
+   border-radius: 50%;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   position: absolute;
+   left: 4px;
+   top: 3px;
+
+   transition: 
+      left .3s,
+      background-color .5s ease-in-out
+   ;
+}
+
+.main-header #btn-toggle-theme.active {
+   background-color: #323232;
+}
+
+.main-header #btn-toggle-theme.active i {
+   left: 37px;
+   background-color: #111;
+}
 
 /* ######################################## */
 /* #              Welcome                 # */

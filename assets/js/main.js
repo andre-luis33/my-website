@@ -35,6 +35,31 @@
       link.onclick = closeHeaderMenu
    })
 
+   
+   const btnToggleTheme = document.querySelector('#btn-toggle-theme')
+   const btnIcon = btnToggleTheme.querySelector('i')
+   const html = document.querySelector('html')
+   
+   btnToggleTheme.onclick = function() {
+      const currentTheme = html.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode'
+      
+      html.classList.remove(...html.classList)
+      btnIcon.classList.remove('fa-sun')
+      btnIcon.classList.remove('fa-moon')
+
+      if(currentTheme === 'dark-mode') {
+         btnToggleTheme.classList.remove('active')
+         btnIcon.classList.add('fa-sun')
+         
+         html.classList.add('light-mode')
+      } else {
+         btnToggleTheme.classList.add('active')
+         btnIcon.classList.add('fa-moon')
+
+         html.classList.add('dark-mode')
+      }
+   }
+
 
    function getAge(date) {
       let today = new Date()

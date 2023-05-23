@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="light-mode">
+<html lang="pt-br" class="dark-mode">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,40 +33,47 @@
             <img id="main-logo" src="assets/img/logo.webp" alt="Logo do Site">
          </a>
    
-         <nav id="header-menu" class="header-menu">
-            <ul role="list">
-               <li>
-                  <a href="#about">
-                     <i class="fas fa-user"></i>
-                     Sobre
-                  </a>
-               </li>
-               <li>
-                  <a href="#skills">
-                     <i class="fas fa-terminal"></i>
-                     Skills
-                  </a>
-               </li>
-               <li>
-                  <a href="#portfolio">
-                     <i class="fas fa-laptop-code"></i>
-                     Portfólio
-                  </a>
-               </li>
-               <li>
-                  <a href="#contact">
-                     <i class="far fa-envelope"></i>
-                     Contato
-                  </a>
-               </li>
-            </ul>
-         </nav>
-
-         <button id="btn-mobile" aria-label="Botão para abrir o o menu de navegação no celular" aria-controls="header-menu" aria-expanded="false">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-         </button>
+         <div class="menu-wrapper">
+            <nav id="header-menu" class="header-menu">
+               <ul role="list">
+                  <li>
+                     <a href="#about">
+                        <i class="fas fa-user"></i>
+                        Sobre
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#skills">
+                        <i class="fas fa-terminal"></i>
+                        Skills
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#portfolio">
+                        <i class="fas fa-laptop-code"></i>
+                        Portfólio
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#contact">
+                        <i class="far fa-envelope"></i>
+                        Contato
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+   
+            <button class="active" id="btn-toggle-theme" aria-label="Botão para trocar o tema de cores">
+               <!-- <i class="fas fa-sun"></i> -->
+               <i class="fas fa-moon"></i>
+            </button>
+   
+            <button id="btn-mobile" aria-label="Botão para abrir o o menu de navegação no celular" aria-controls="header-menu" aria-expanded="false">
+               <span class="line"></span>
+               <span class="line"></span>
+               <span class="line"></span>
+            </button>
+         </div>
       </div>
    </header>
 
