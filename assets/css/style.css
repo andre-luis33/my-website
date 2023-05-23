@@ -434,13 +434,13 @@ html.light-mode li::after {
    border-radius: 25px;
    
    position: relative;
+
+   transition: background-color .2s;
 }
 
 .main-header #btn-toggle-theme i {
    background-color: #fff;
    color: rgb(221, 201, 13);
-
-   /* font-size: 1.1rem; */
 
    height: 24px;
    width: 24px;
@@ -462,6 +462,14 @@ html.light-mode li::after {
 
 .main-header #btn-toggle-theme.active {
    background-color: #323232;
+}
+
+.main-header #btn-toggle-theme.active:hover {
+   background-color: #3e3e3e;
+}
+
+.main-header #btn-toggle-theme:hover {
+   background-color: #ccc;
 }
 
 .main-header #btn-toggle-theme.active i {
