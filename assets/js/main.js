@@ -40,23 +40,63 @@
    const btnIcon = btnToggleTheme.querySelector('i')
    const html = document.querySelector('html')
    
+   const firstTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
+   let eventWasCalled = false
+
+   
+   if(document.readyState !== 'loading') {
+      initPage()
+   } else {
+      document.addEventListener('DOMContentLoaded', () => {
+         initPage()
+      })
+   }
+
+   setTimeout(() => {
+      if(!eventWasCalled) {
+         setTheme(firstTheme)
+         html.style.visibility = 'visible'
+         console.log(`just set theme to ${firstTheme} cause eventWasCalled was ${eventWasCalled}`);
+      }
+   }, 300)
+   
+   function initPage() {
+      if(firstTheme === 'light') {
+         setTheme('light')
+      }
+
+      console.log('SHOULD TURN VISIBLE');
+      html.style.visibility = 'visible'
+      eventWasCalled = true
+   }
+
    btnToggleTheme.onclick = function() {
-      const currentTheme = html.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode'
-      
+      const currentTheme = html.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode'      
+      if(currentTheme === 'dark-mode') 
+         setTheme('light')
+      else
+         setTheme('dark')
+   }
+
+
+
+   function setTheme(theme) {
       html.classList.remove(...html.classList)
       btnIcon.classList.remove('fa-sun')
       btnIcon.classList.remove('fa-moon')
 
-      if(currentTheme === 'dark-mode') {
-         btnToggleTheme.classList.remove('active')
-         btnIcon.classList.add('fa-sun')
-         
-         html.classList.add('light-mode')
-      } else {
+      if(theme === 'dark') {
          btnToggleTheme.classList.add('active')
          btnIcon.classList.add('fa-moon')
 
          html.classList.add('dark-mode')
+         localStorage.setItem('theme', 'dark')
+      } else {
+         btnToggleTheme.classList.remove('active')
+         btnIcon.classList.add('fa-sun')
+         
+         html.classList.add('light-mode')
+         localStorage.setItem('theme', 'light')
       }
    }
 
