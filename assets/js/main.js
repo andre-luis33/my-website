@@ -57,7 +57,7 @@
       if(!eventWasCalled) {
          setTheme(firstTheme)
          html.style.visibility = 'visible'
-         console.log(`just set theme to ${firstTheme} cause eventWasCalled was ${eventWasCalled}`);
+         // console.log(`just set theme to ${firstTheme} cause eventWasCalled was ${eventWasCalled}`);
       }
    }, 300)
    
@@ -67,7 +67,7 @@
          setTheme('light')
       }
 
-      console.log('SHOULD TURN VISIBLE');
+      // console.log('SHOULD TURN VISIBLE');
       html.style.visibility = 'visible'
       eventWasCalled = true
    }
