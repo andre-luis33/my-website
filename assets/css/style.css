@@ -11,7 +11,7 @@
 }
 
 html {
-   visibility: hidden;
+   visibility: hidden; /* trying to prevent layout shift... i hope it works :D */
 }
 
 /* Reseting Browser Default Style */
