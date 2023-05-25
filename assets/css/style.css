@@ -1412,10 +1412,16 @@ html.light-mode .main-footer .text-wrapper {
    /* ######################################## */
 
    .welcome-section {
+      margin-top: 70px;
+
       height: 45vh;
       background-position-y: 10%;
 
       box-shadow: 0px 10px 10px -10px var(--clr-purple-light);
+   }
+
+   html.light-mode .welcome-section {
+      background-size: cover;
    }
 
    .welcome-section h1 {
