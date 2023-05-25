@@ -41,9 +41,9 @@
    const html = document.querySelector('html')
    
    const firstTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'
-   let eventWasCalled = false
-
    
+   // trying to prevent layout shift
+   let eventWasCalled = false
    if(document.readyState !== 'loading') {
       initPage()
    } else {
@@ -52,6 +52,7 @@
       })
    }
 
+   // trying to prevent layout shift
    setTimeout(() => {
       if(!eventWasCalled) {
          setTheme(firstTheme)
@@ -60,6 +61,7 @@
       }
    }, 300)
    
+   // trying to prevent layout shift
    function initPage() {
       if(firstTheme === 'light') {
          setTheme('light')
