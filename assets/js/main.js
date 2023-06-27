@@ -3,6 +3,8 @@
    const ENVIROMENT = window.location.origin.includes('127.0.0.1') ? 'dev' : 'prod'
    const IS_MOBILE = window.innerWidth <= 768
 
+   const LANGUAGE = window.location.href.includes('english') ? 'en' : 'pt'
+
 
    const headerMenu = document.querySelector('.header-menu')
    const btnMobile  = document.querySelector('#btn-mobile')
@@ -67,7 +69,6 @@
          setTheme('light')
       }
 
-      // console.log('SHOULD TURN VISIBLE');
       html.style.visibility = 'visible'
       eventWasCalled = true
    }
@@ -133,15 +134,9 @@
    const accordionArrows  = document.querySelectorAll('.accordion-arrow')
    const accordionBodys  = document.querySelectorAll('.accordion-body')
 
-   const closableTagsOnMobile = ['button', 'header', 'h4']
-
    accordionsHeaders.forEach(accordionHeader => {   
 
       accordionHeader.onclick = e => {
-         // const currentTag = e.target.tagName.toLowerCase()
-         // if(IS_MOBILE && !closableTagsOnMobile.includes(currentTag)) {
-         //    return
-         // }
 
          let accordionArrow = accordionHeader.querySelector('.accordion-arrow')
          let accordionBody = accordionHeader.nextElementSibling
@@ -169,27 +164,32 @@
       {
          name: 'html',
          title: 'HTML',
-         body: 'Possuo experiência vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).'
+         body: 'Possuo experiência vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).',
+         englishBody: 'Strong experience after working in many projects in a lot of areas, always keeping in mind the semantics tags, SEO strategies, accessibility, optimizations and forms (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
       },
       {
          name: 'css',
          title: 'CSS',
-         body: 'Não existe site sem CSS, e assim como HTML, também possuo muita experiência com CSS, Flexbox, CSS Grid, Box Model, ... Além do design responsivo e aquele arquivozinho minificado também, que já são de praxe :D'
+         body: 'Não existe site sem CSS, e assim como HTML, também possuo muita experiência com CSS, Flexbox, CSS Grid, Box Model, ... Além do design responsivo e aquele arquivozinho minificado também, que já são de praxe :D',
+         englishBody: 'There is no such thing as website without CDD, and as HTML, i also have strong skills with CSS, Flexbox, CSS Grid, Box Model, ... And of course, the nice looking responsive design with a minified file that are a rule :D'
       },
       {
          name: 'js',
          title: 'Javascript',
-         body: 'Essa é a minha parte favorita do front-end, onde toda a mágica acontece. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais'
+         body: 'Essa é a minha parte favorita do front-end, onde toda a mágica acontece. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais',
+         englishBody: 'This is my favorite part of the front-end, where all the magic happens. I know DOM manipulation just fine, Event listeners, AJAX requests, HOFs and much much more'
       },
       {
          name: 'jquery',
          title: 'jQuery',
-         body: 'Apesar de todo mundo considerar ele "deprecated", e eu saber me virar muito bem sem ele, não podia deixar de fora, amo esse cara de verdade... Por muito tempo tivemos um relacionamento forte, e usar javascript sem ele as vezes me dói, mas enfim, se um dia ele voltar (espero mt q volte), pode deixar comigo!'
+         body: 'Apesar de todo mundo considerar ele "deprecated", e eu saber me virar muito bem sem ele, não podia deixar de fora, amo esse cara de verdade... Por muito tempo tivemos um relacionamento forte, e usar javascript sem ele as vezes me dói, mas enfim, se um dia ele voltar (espero mt q volte), pode deixar comigo!',
+         englishBody: 'Even though everybody likes to say it\'s "deprecated", and the fact that i know my way without it, he couldn\'t be out, cause i love this guy... For a long time we had a serious relationship, and using javascript without him still hurts me, but anyway... if he ever comes back (forever hoping), leave it all with me!'
       },
       {
          name: 'bootstrap',
          title: 'Bootstrap',
-         body: 'Não sou refém dele, mas é muito bom saber que psoso usá-lo rs. Facilita muito a vida, muita gente não gosta de ficar customizando tabela e modal, e eu estou nessa lista ai, pois já usei também em muitos projetos.'
+         body: 'Não sou refém dele, mas é muito bom saber que psoso usá-lo rs. Facilita muito a vida, muita gente não gosta de ficar customizando tabela e modal, e eu estou nessa lista ai, pois já usei também em muitos projetos.',
+         englishBody: 'I am no bootstrap hostage, '
       },
       {
          name: 'react',
@@ -254,9 +254,6 @@
       },
    ]
 
-   const skillTitle = document.querySelector('#front-end-title')
-   const skillBody  = document.querySelector('#front-end-body')
-
    const skillIcons = document.querySelectorAll('.icon[data-icon-hover]')
 
    skillIcons.forEach(icon => {
@@ -277,10 +274,10 @@
          }
 
          const skillName = icon.getAttribute('data-skill-name')   
-         const { title, body } = skills.find(skill => skill.name === skillName)
+         const { title, body, englishBody } = skills.find(skill => skill.name === skillName)
 
          document.querySelector(`#${accordionType}-title`).innerHTML = title
-         document.querySelector(`#${accordionType}-body`).innerHTML  = body
+         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? body : englishBody
       }
       
       icon.onmouseleave = () => {
@@ -440,11 +437,14 @@
       formFeedbackElement.classList.remove('error')
       
       if(feedback === 'success') {
-         formFeedbackElement.textContent = 'Formulário enviado com sucesso! Obrigado :)'
+         formFeedbackElement.textContent = LANGUAGE === 'pt' ? 'Formulário enviado com sucesso! Obrigado :)' : 'Form was successfully sent! Thank you :)'
          formFeedbackElement.classList.add('success')
          form.reset()
       } else {
-         formFeedbackElement.innerHTML = 'Ooops, deu algum erro no serviço de e-mail :( <br> <a href="https://wa.me/5521974480796?text=Ol%C3%A1+andr%C3%A9%2C+vim+do+seu+portf%C3%B3lio%21">Clique aqui para ir para o whatsapp</a>'
+         formFeedbackElement.innerHTML = LANGUAGE === 'pt' ? 
+            'Ooops, deu algum erro no serviço de e-mail :( <br> <a href="https://wa.me/5521974480796?text=Ol%C3%A1+andr%C3%A9%2C+vim+do+seu+portf%C3%B3lio%21">Clique aqui para ir para o whatsapp</a>'
+            :
+            'Ohh no, something went wrong with in the mail service :( <br> <a href="https://wa.me/5521974480796?text=Ol%C3%A1+andr%C3%A9%2C+vim+do+seu+portf%C3%B3lio%21">Click here to go to whatsapp</a>'
          formFeedbackElement.classList.add('error')
       }
 

@@ -439,7 +439,7 @@ html.light-mode li::after {
    
    position: relative;
 
-   transition: background-color .2s;
+   transition: all .2s;
 }
 
 .main-header #btn-toggle-theme:focus {
@@ -478,6 +478,7 @@ html.light-mode li::after {
 
 .main-header #btn-toggle-theme:hover {
    background-color: #ccc;
+   box-shadow: 1px 1px 5px var(--clr-purple-soft);
 }
 
 .main-header #btn-toggle-theme.active i {
