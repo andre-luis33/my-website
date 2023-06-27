@@ -442,6 +442,10 @@ html.light-mode li::after {
    transition: background-color .2s;
 }
 
+.main-header #btn-toggle-theme:focus {
+   box-shadow: 1px 1px 5px var(--clr-purple-soft);
+}
+
 .main-header #btn-toggle-theme i {
    background-color: #fff;
    color: rgb(221, 201, 13);
