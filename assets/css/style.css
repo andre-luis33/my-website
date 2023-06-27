@@ -363,6 +363,11 @@ html.light-mode .header-menu ul a:hover {
    margin-right: 10px;
 }
 
+.header-menu li a img {
+   width: 20px;
+   margin-right: 10px;
+}
+
 .header-menu li {
    position: relative;
 }
@@ -396,6 +401,7 @@ html.light-mode li::after {
    transform-origin: left;
    transform: scaleX(1);
 }
+
 
 .main-header #btn-mobile {
    height: 25px;

@@ -188,69 +188,82 @@
       {
          name: 'bootstrap',
          title: 'Bootstrap',
-         body: 'Não sou refém dele, mas é muito bom saber que psoso usá-lo rs. Facilita muito a vida, muita gente não gosta de ficar customizando tabela e modal, e eu estou nessa lista ai, pois já usei também em muitos projetos.',
-         englishBody: 'I am no bootstrap hostage, '
+         body: 'Não sou refém dele, mas é muito bom saber que posso usá-lo rs. Facilita muito a vida, muita gente não gosta de ficar customizando tabela e modal, e eu estou nessa lista ai, pois já usei também em muitos projetos.',
+         englishBody: 'I\'m no bootstrap hostage, but it\'s very nice to know that i can use him :D. It makes life easier, cause a lot of people don\'t appreciate customizing tables and modals, and i am included, cause i\'ve used it in many projects'
       },
       {
          name: 'react',
          title: 'React JS',
-         body: 'Da lista de skills, é o que eu tenho menos conhecimento, mas já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas e Context'
+         body: 'É a tecnologia que estou estudando no momento e cada vez me aprofundando mais. Já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas, Context API, Event Emitters, Components, ...',
+         englishBody: 'Tecnology that i\'m currently studying, and improving as we speak (pretend we are). Worked in a few projects, having to deal with its hooks, routes, Context API, Event Emitters, Components, ...',
       },
 
       {
          name: 'php',
          title: 'PHP',
-         body: 'Linguagem que eu domino e uso há mais de 3 anos. Comecei com PHP puro, e então fui evoluindo nessa stack que sempre me possibilitou fazer tudo. Funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC, etc.'
+         body: 'Linguagem que eu domino e uso há mais de 3 anos. Comecei com PHP puro, e então fui evoluindo nessa stack que sempre me possibilitou fazer tudo. Funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC, ...',
+         englishBody: 'Language that i am the boss and use for over 3 years. Started from pure PHP, and then evolving in this language that always made everthing possible. Functions, POO, PDO, Composer, Session, Cookie, File Upload, File manipulation, Excel Sheets, pdfs, APIs REST, MVC, ...'
       },
       {
          name: 'laravel',
          title: 'Laravel',
-         body: 'Não possuo tanta experiência, mas já suguei tanto do PHP puro, que não seria dificuldade nenhuma ter que trabalhar com esse framework lindo'
+         body: 'Não possuo tanta experiência, mas já suguei tanto do PHP puro, que não seria dificuldade nenhuma ter que trabalhar com esse framework lindo',
+         englishBody: 'I don\'t have much experience with, but i already sucked so much of pure PHP, that having to work with this beautiful guy would be no problem'
       },
       {
          name: 'sql',
          title: 'Banco de Dados Relacional',
-         body: 'Minha preferência de uso em projetos, sempre usei e tenho bastante experiência. Já usei MySQL, SQL Server, Postgres e SQLite. Minhas tabelas sempre tem chave primária e índice, pq sem isso nem é tabela pra mim. Relacionamentos (Many to Many is life) Transactions, Stored Procedures, Triggers, PK, FK, otimizações, etc.'
+         englishTitle: 'Relational Databases',
+         body: 'Vasta experiência, sempre usei e tenho bastante experiência. Já usei MySQL, SQL Server, Postgres e SQLite. Minhas tabelas sempre tem chave primária, estrangeira e índices, pq sem isso nem é tabela pra mim. Relacionamentos (Many to Many is life), Transactions, Stored Procedures, Triggers, PK, FK, otimizações, etc.',
+         englishBody: 'Strong skills, always used and have plenty of experience. I have used MySQL, SQL Server, Postgres and SQLite. My tables always have primary keys, foreign keys and indexes, cause it\'s not a table without it. Relations (Many to Many is life), Transactions, Stored Procedures, Triggers, PK, FK, otimizações, etc.',
       },
       {
          name: 'node',
          title: 'Node JS',
-         body: 'Tecnologia que estou estudando no momento. Já usei profissionalmente e achei fantástica e poderosa. Pretendo me aprofundar mais e dominá-la no futuro, conseguindo gerar o .eslintrc.json sem olhar no stackoverflow'
+         body: 'Tecnologia que estou estudando no momento. Já usei profissionalmente e achei fantástica e poderosa. Pretendo me aprofundar mais e dominá-la no futuro, conseguindo gerar o .eslintrc.json sem olhar no stackoverflow e gerar meus próprios Event Emitters',
+         englishBody: 'Tecnology that i am currently studying. Already have used it profissionaly and found it fantastic and very powerfull. I intend in being a boss like i am in PHP, being able to generate the .eslintrc.json without asking stackoverflow for help, and generating my own Event Emitters'
       },
       {
          name: 'api',
          title: 'API Rest',
-         body: 'Quer falar comigo? Faz um POST ae'
+         body: 'Sempre seguindo as boas práticas, e padrões REST para tudo. Por exemplo, você fez um GET nesse lindo site, achou um erro....ops... então fez um POST pra mim, daí eu fiz um PUT para fazer uma correção e acabei também fazendo um DELETE em uma coisa que não fazia sentido =)',
+         englishBody: 'Always following REST standards for everything. For example, you made a GET to this nice website, found and error.....oopsi... and then made a POST to me, then i made a PUT to fix this issue and also made a DELETE in something that didn\'t make sense =)'
       },
       {
          name: 'figma',
          title: 'Figma',
-         body: 'Consigo manipular a experiência tranquilamente, mas desenvolver layout não é meu forte. Meu uso profissional envolve o desenvolvimento dos layouts propostos pelas equipes de design =)'
+         body: 'Consigo manipular a ferramenta tranquilamente, mas desenvolver layout não é meu forte. Meu uso profissional envolve o desenvolvimento do código dos layouts propostos pelas equipes de design =)',
+         englishBody: 'I am able to easily manipulate the software, but developing a nice layout is not my strong suit. My professional use envolves the coding development of layouts produced by desing team =)'
       },
       {
          name: 'git',
          title: 'Git',
-         body: 'Projeto sem versionamento é tipo armário sem gaveta, uma hora vai dar ruim. Sempre utilizei, tentando seguir as melhores práticas, convenções de nome de branch e commit messages. Também familiar com o gitflow de aplicações reais, com pull requests, estrutura de branchs, branch feature, hotfix, main, etc'
+         body: 'Projeto sem versionamento é tipo armário sem gaveta, uma hora vai dar ruim. Sempre utilizei, tentando seguir as melhores práticas, convenções de nome de branch e commit messages. Também familiar com o gitflow de aplicações reais, com pull requests, estrutura de branchs (branch feature, hotfix, main, ...)',
+         englishBody: 'Project without versions is like a closet without drawers, sooner or lather it will fail. Always have used, trying to follow best practicets, branch and commit naming conventions. Also familiar with gitflows of real applications, with pull requests, branch structures, (branch feature, hotfix, main, ...)'
       },
       {
          name: 'azure',
          title: 'Azure',
-         body: 'O meu maior projeto teve toda sua infraestrutura lá, então sou familiar com essa ferramenta de cloud. Já configurei Serviços de Aplicativos, com Pipelines dando suporte a CI/CD, Servidores Nginx, bancos de dados, Static Web Apps, SSH, etc.'
+         body: 'O meu maior projeto teve toda sua infraestrutura lá, então sou familiar com essa ferramenta de cloud. Já configurei Serviços de Aplicativos, com Pipelines dando suporte a CI/CD, Servidores Nginx, bancos de dados, Static Web Apps, SSH, Blob Storage, Azure Functions,...',
+         englishBody: 'My biggest project had all of it\'s infrastructure there, so i am familiar with this cloud enviroment. I have setup App Services, with pipelines supporting CI/CD, Nginx servers, databases, Static Web Apps, SSH, Blob Storage, Azure Functions,...',
       },
       {
          name: 'devops',
          title: 'Devops',
-         body: 'Implantei a ferramenta em projetos profissionais, dando suporte ao life-cycle de todo o projeto, automatizando as etapas. Desde a criação de cards, com os requisitos, etc. no Azure Boards, Versionamento do código no Azure Repos, e CI/CD com Azure Pipelines'
+         body: 'Implantei a ferramenta em projetos profissionais, dando suporte ao life-cycle de todo o projeto, automatizando as etapas. Desde a criação de cards, com os requisitos no Azure Boards, Versionamento do código no Azure Repos e CI/CD com Azure Pipelines',
+         englishBody: 'Setup this tool in professional projects, supporting the entire life-cycle of the project, automating steps. Since cards creations, with it\'s requirements in Azure Boards, code versioning in Azure Repos and CI/CD with Azure Pipelines'
       },
       {
          name: 'soft-skills',
          title: 'Soft Skills',
-         body: 'Sou bastante comunicativo, versátil, solícito, organizado e criativo. Adoro trabalhar em equipe, se ajudando para a resolução de problemas e realmente tedo a sensação de ser uma pessoa essencial para o time.'
+         body: 'Sou bastante comunicativo, versátil, solícito, organizado e criativo. Adoro trabalhar em equipe, se ajudando para a resolução de problemas e realmente tedo a sensação de ser uma pessoa essencial para o time.',
+         englishBody: ''
       },
       {
          name: 'english',
          title: 'Inglês',
-         body: 'Whenever I fill out a form, I always mark the fluent option, because that\'s true. I am fully capable of listening/talking/writing in english, thanks to games and lots of netflix hours, but chill out, my english can get very professional as needed. Want proof? I wrote this without google translator :D (i swear...)'
+         body: '(Check out the english version) Whenever I fill out a form, I always mark the fluent option, because that\'s true. I am fully capable of listening/talking/writing in english, thanks to games and lots of netflix hours, but chill out, my english can get very professional as needed. Want proof? I wrote this without google translator :D (i swear...)',
+         englishBody: 'Whenever I fill out a form, I always mark the fluent option, because that\'s true. I am fully capable of listening/talking/writing in english, thanks to games and lots of netflix hours, but chill out, my english can get very professional as needed. Want proof? I wrote this without google translator :D (i swear...)',
       },
    ]
 
@@ -274,9 +287,9 @@
          }
 
          const skillName = icon.getAttribute('data-skill-name')   
-         const { title, body, englishBody } = skills.find(skill => skill.name === skillName)
+         const { title, body, englishTitle, englishBody } = skills.find(skill => skill.name === skillName)
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = title
+         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
          document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? body : englishBody
       }
       
@@ -291,8 +304,8 @@
 
          childIcon.style.transform = 'scale(1)'
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>'
-         document.querySelector(`#${accordionType}-body`).innerHTML  = '(É ilimitado e gratuito)'
+         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'pt' ? 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>' : 'Appreciate it <i class="far fa-thumbs-up"></i> <small>(Feel free to hover more)<small>'
+         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? '(É ilimitado e gratuito)' : "(It's free and ilimited)"
       }
 
       if(!IS_MOBILE) 
