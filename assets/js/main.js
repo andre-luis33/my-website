@@ -81,12 +81,13 @@
          setTheme('dark')
    }
 
-
+   let CURRENT_THEME
 
    function setTheme(theme) {
       html.classList.remove(...html.classList)
       btnIcon.classList.remove('fa-sun')
       btnIcon.classList.remove('fa-moon')
+      CURRENT_THEME = theme
 
       if(theme === 'dark') {
          btnToggleTheme.classList.add('active')
@@ -329,11 +330,11 @@
          }
          
          const skillName = icon.getAttribute('data-skill-name')
-         const { title, body } = skills.find(skill => skill.name === skillName)
+         const { body, englishBody } = skills.find(skill => skill.name === skillName)
          
          const description = icon.querySelector('.mobile-description')
-         description.innerHTML = body
-         description.style.color = color
+         description.innerHTML = LANGUAGE === 'pt' ? body : englishBody
+         description.style.color = CURRENT_THEME === 'light' ? 'var(--clr-dark)' : color
       }
    })
 
