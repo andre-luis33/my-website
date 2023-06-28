@@ -4,7 +4,7 @@
    const IS_MOBILE = window.innerWidth <= 768
 
    const LANGUAGE = window.location.href.includes('english') ? 'en' : 'pt'
-
+   let CURRENT_THEME
 
    const headerMenu = document.querySelector('.header-menu')
    const btnMobile  = document.querySelector('#btn-mobile')
@@ -81,8 +81,8 @@
          setTheme('dark')
    }
 
-   let CURRENT_THEME = firstTheme
-
+   CURRENT_THEME = firstTheme
+   
    function setTheme(theme) {
       html.classList.remove(...html.classList)
       btnIcon.classList.remove('fa-sun')
