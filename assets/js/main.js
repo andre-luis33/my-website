@@ -81,7 +81,7 @@
          setTheme('dark')
    }
 
-   let CURRENT_THEME
+   let CURRENT_THEME = firstTheme
 
    function setTheme(theme) {
       html.classList.remove(...html.classList)
@@ -257,8 +257,8 @@
       {
          name: 'soft-skills',
          title: 'Soft Skills',
-         body: 'Sou bastante comunicativo, versátil, solícito, organizado e criativo. Adoro trabalhar em equipe, se ajudando para a resolução de problemas e realmente tedo a sensação de ser uma pessoa essencial para o time.',
-         englishBody: ''
+         body: 'Sou bastante comunicativo, versátil, proativo, organizado e criativo. Adoro trabalhar em equipe, se ajudando para a resolução de problemas e realmente tedo a sensação de ser uma pessoa essencial para o time.',
+         englishBody: 'I\'m a very comunicative person, versatile, proactive, organized and creative. I love being part of a team, helping each other to solve upcoming issues, and having the feeling that i truly make a difference to the team'
       },
       {
          name: 'english',
