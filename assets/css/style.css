@@ -368,6 +368,10 @@ html.light-mode .header-menu ul a:hover {
    margin-right: 10px;
 }
 
+.header-menu li a .mobile-text {
+   display: none;
+}
+
 .header-menu li {
    position: relative;
 }
@@ -1371,46 +1375,65 @@ html.light-mode .main-footer .text-wrapper {
    .header-menu.open ul li:nth-child(1) {
       margin-right: 0px;
       transition-duration: .4s;
-      transition-delay: .3s;
+      transition-delay: .2s;
    }
    
    .header-menu.open ul li:nth-child(2) {
       margin-right: 20px;
       transition-duration: .4s;
-      transition-delay: .6s;
+      transition-delay: .5s;
    }
    
    .header-menu.open ul li:nth-child(3) {
       margin-right: 30px;
       transition-duration: .4s;
-      transition-delay: .9s;
+      transition-delay: .8s;
    }
    
    .header-menu.open ul li:nth-child(4) {
       margin-right: 60px;
       transition-duration: .4s;
-      transition-delay: 1.2s;
+      transition-delay: 1.1s;
+   }
+   
+   .header-menu.open ul li:nth-child(5) {
+      margin-right: 80px;
+      transition-duration: .4s;
+      transition-delay: 1.4s;
    }
 
    .header-menu.open li:nth-child(1)::after {
-      transition-delay: .4s;
+      transition-delay: .3s;
    }
    
    .header-menu.open li:nth-child(2)::after {
-      transition-delay: .7s;
+      transition-delay: .6s;
    }
    
    .header-menu.open li:nth-child(3)::after {
-      transition-delay: 1s;
+      transition-delay: .9s;
    }
    
    .header-menu.open li:nth-child(4)::after {
-      transition-delay: 1.3s;
+      transition-delay: 1.2s;
+   }
+   
+   .header-menu.open li:nth-child(5)::after {
+      transition-delay: 1.5s;
    }
 
    .header-menu a {
       font-size: 1.5rem;
    }
+   
+   .header-menu li a .desktop-text {
+      display: none;
+   }
+   
+   .header-menu li a .mobile-text {
+      display: block;
+   }
+
 
    .header-menu.open li::after {
       transition-duration: .2s;
