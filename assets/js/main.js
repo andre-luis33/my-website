@@ -544,4 +544,29 @@
    lazyElements.forEach(lazyLoad)
 
 
+   // ###################### LANGUAGE POPOVER ###############################
+   const DEVICE_IS_PORTUGUESE = /^pt\b/.test(navigator.language || navigator.userLanguage);
+
+   const popover = document.querySelector('#language-popover')
+   const btnClosePopover = document.querySelector('#btn-close-popover')
+   
+   if(!DEVICE_IS_PORTUGUESE) {
+      setTimeout(() => {
+
+         showPopover()
+         btnClosePopover.onclick = closePopover
+
+      }, 2000)
+   }
+
+   function showPopover() {
+      popover.classList.add('show')
+      popover.setAttribute('aria-hidden', 'false')
+   }
+   
+   function closePopover() {
+      popover.classList.remove('show')
+      popover.setAttribute('aria-hidden', 'true')
+   }
+
 })()

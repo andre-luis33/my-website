@@ -77,11 +77,13 @@ button.disabled span {
 html.dark-mode {
    --clr-dark: #0b091a;
    --clr-skils-icon: #1A1A40;
+   --clr-text: #fff;
 }
 
 html.light-mode {
    --clr-dark: #fff;
    --clr-skils-icon: #fff;
+   --clr-text: var(--clr-purple-dark);
 }
 
 body {
@@ -1255,6 +1257,50 @@ html.light-mode .form-group .form-field {
 }
 
 /* ######################################## */
+/* #          Language Popover            # */
+/* ######################################## */
+
+.language-popover {
+   position: fixed;
+   bottom: -500px;
+   left: 0;
+   right: 0;
+   z-index: 100;
+
+   transition: all 1s ease;
+
+   margin: 0 auto;
+   padding: 15px 30px;
+   width: 70%;
+   max-width: 1000px;
+
+   background-color: var(--clr-purple-dark);
+
+   display: flex;
+   align-items: center;
+   gap: 30px;
+
+   border-radius: 8px;
+   border: 2px solid var(--clr-purple-soft);
+   box-shadow: 2px 2px 4px var(--clr-purple-light);
+}
+
+.language-popover.show {
+   bottom: 20px;
+}
+
+.language-popover .icon-wrapper i {
+   font-size: 3rem;
+   color: var(--clr-purple-soft);
+}
+
+.language-popover .text {
+   color: var(--clr-text);
+   margin-bottom: 15px;
+   font-size: 1.3rem;
+}
+
+/* ######################################## */
 /* #              Footer                  # */
 /* ######################################## */
 
@@ -1718,6 +1764,33 @@ html.light-mode .main-footer .text-wrapper {
    .form-wrapper .form-feedback {
       text-align: center;
       font-size: .95rem;
+   }
+
+   /* ######################################## */
+   /* #          Language Popover            # */
+   /* ######################################## */
+
+   .language-popover {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 90%;
+
+      padding-inline: 15px;
+   }
+
+   .language-popover .text {
+      font-size: .9rem;
+      text-align: center;
+   }
+
+   .language-popover .btn-wrapper {
+      display: flex;
+      justify-content: center;
+   }
+
+   .language-popover .btn-pushable span {
+      font-size: .8rem;
+      padding-block: 8px;
    }
 
    /* ######################################## */
