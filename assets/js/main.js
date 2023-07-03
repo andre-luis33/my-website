@@ -104,6 +104,7 @@
       }
    }
 
+   // ###################### DINAMIC DATE INSERTION ###############################
 
    function getAge(date) {
       let today = new Date()
@@ -129,6 +130,15 @@
    ageElement.textContent = age
    yearsDevElement.textContent = devAge
 
+
+   const currentDate = new Date()
+   const currentYear = currentDate.getFullYear()
+   
+   const yearFooter = document.querySelector('#year-footer')
+   yearFooter.innerHTML = currentYear
+
+
+   // ###################### ACCORDION ###############################
 
 
    const accordionsHeaders = document.querySelectorAll('.accordion header')
