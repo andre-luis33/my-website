@@ -175,19 +175,20 @@
       {
          name: 'html',
          title: 'HTML',
-         body: 'Possuo vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).',
+         // body: 'Possuo vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).',
+         body: 'Após atuar em diversos projetos, posso dizer com confiança que domino essa linguagem de marcação e seus pontos mais importantes, como o uso de html semântico, técnicas de SEO, acessibilidade, otimizações, formulários e validações (não uso o atributo required pra validação, js não custa nada).',
          englishBody: 'Strong experience after working in many projects in a lot of areas, always keeping in mind the semantics tags, SEO strategies, accessibility, optimizations and forms (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
       },
       {
          name: 'css',
          title: 'CSS',
-         body: 'Não existe site sem CSS, e assim como HTML, também possuo muita experiência com CSS, Flexbox, CSS Grid, Box Model, ... Além do design responsivo e aquele arquivozinho minificado também, que já são de praxe :D',
+         body: 'Não existe site sem CSS, e em todos os projetos que atuei, sempre busquei perfeição, e a melhor qualidade possível, com foco em entregar um site que se destaque entre os outros, sempre sendo fiel aos mockups no figma. Também domino os principais pontos, como Flexbox, CSS Grid, Box Model,... Além do design responsivo, levando em consideração até os benditos usuários do galaxy fold...',
          englishBody: 'There is no such thing as website without CDD, and as HTML, i also have strong skills with CSS, Flexbox, CSS Grid, Box Model, ... And of course, the nice looking responsive design with a minified file that are a rule :D'
       },
       {
          name: 'js',
          title: 'Javascript',
-         body: 'Essa é a minha parte favorita do front-end, onde toda a mágica acontece. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais',
+         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais',
          englishBody: 'This is my favorite part of the front-end, where all the magic happens. I know DOM manipulation just fine, Event listeners, AJAX requests, HOFs and much much more'
       },
       {
