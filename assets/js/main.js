@@ -175,19 +175,19 @@
       {
          name: 'html',
          title: 'HTML',
-         body: 'Possuo vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).',
+         body: 'Após atuar em diversos projetos, posso dizer com confiança que domino essa linguagem de marcação e seus pontos mais importantes, como o uso de html semântico, técnicas de SEO, acessibilidade, otimizações, formulários e validações (não uso o atributo required pra validação, js não custa nada).',
          englishBody: 'Strong experience after working in many projects in a lot of areas, always keeping in mind the semantics tags, SEO strategies, accessibility, optimizations and forms (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
       },
       {
          name: 'css',
          title: 'CSS',
-         body: 'Não existe site sem CSS, e assim como HTML, também possuo muita experiência com CSS, Flexbox, CSS Grid, Box Model, ... Além do design responsivo e aquele arquivozinho minificado também, que já são de praxe :D',
+         body: 'Não existe site sem CSS, e em todos os projetos que atuei, sempre busquei perfeição, e a melhor qualidade possível, com foco em entregar um site que se destaque entre os outros, sempre sendo fiel aos mockups no figma. Também domino os principais pontos, como Flexbox, CSS Grid, Box Model,... Além do design responsivo, levando em consideração até os benditos usuários do galaxy fold...',
          englishBody: 'There is no such thing as website without CDD, and as HTML, i also have strong skills with CSS, Flexbox, CSS Grid, Box Model, ... And of course, the nice looking responsive design with a minified file that are a rule :D'
       },
       {
          name: 'js',
          title: 'Javascript',
-         body: 'Essa é a minha parte favorita do front-end, onde toda a mágica acontece. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais',
+         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Possuo uma base de conhecimentos bem sólida, pois desenvolvi diversos projetos usando o javascript puro, tão reativos quanto. De seus principais pontos, domino manipulação da DOM, Event Listeners, requisições AJAX, HOFs, Arrow Functions, diferença de var, let e const rsrs, json,...',
          englishBody: 'This is my favorite part of the front-end, where all the magic happens. I know DOM manipulation just fine, Event listeners, AJAX requests, HOFs and much much more'
       },
       {
@@ -205,14 +205,14 @@
       {
          name: 'react',
          title: 'React JS',
-         body: 'É a tecnologia que estou estudando no momento e cada vez me aprofundando mais. Já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas, Context API, Event Emitters, Components, ...',
+         body: 'É a tecnologia que estou estudando no momento e cada vez me aprofundando mais. Já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas, Context API, Event Emitters, Components, gerenciamento de estado, styled components...',
          englishBody: 'Tecnology that i\'m currently studying, and improving as we speak (pretend we are). Worked in a few projects, having to deal with its hooks, routes, Context API, Event Emitters, Components, ...',
       },
 
       {
          name: 'php',
          title: 'PHP',
-         body: 'Linguagem que eu domino e uso há mais de 3 anos. Comecei com PHP puro, e então fui evoluindo nessa stack que sempre me possibilitou fazer tudo. Funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC, ...',
+         body: 'Linguagem que eu domino e desenvolvi diversos projetos, sempre entregando tudo que foi pedido, porque né, o que é que não da pra fazer com PHP? Comecei com PHP puro, e então fui evoluindo, e domino seus principais pontos, como funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC,...',
          englishBody: 'Language that i am the boss and use for over 3 years. Started from pure PHP, and then evolving in this language that always made everthing possible. Functions, POO, PDO, Composer, Session, Cookie, File Upload, File manipulation, Excel Sheets, pdfs, APIs REST, MVC, ...'
       },
       {
@@ -279,14 +279,16 @@
    ]
 
    const skillIcons = document.querySelectorAll('.icon[data-icon-hover]')
+   let defaultTextTimeout
 
    skillIcons.forEach(icon => {
       
       const accordionType = icon.getAttribute('data-accordion')
 
-      icon.onmouseover = () => {
-         const childIcon = icon.querySelector('i, svg')
+      icon.onmouseenter = () => {
+         clearTimeout(defaultTextTimeout)
 
+         const childIcon = icon.querySelector('i, svg')
          childIcon.style.transform = 'scale(1.1)'
             
          
@@ -297,11 +299,25 @@
             icon.style.color = color
          }
 
+         const currentAccordionTitle = document.querySelector(`#${accordionType}-title`)
+         const currentAccordionBody  = document.querySelector(`#${accordionType}-body`)
+
          const skillName = icon.getAttribute('data-skill-name')   
          const { title, body, englishTitle, englishBody } = skills.find(skill => skill.name === skillName)
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
-         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? body : englishBody
+
+         if(title !== document.querySelector(`#${accordionType}-title`).textContent) {
+            currentAccordionTitle.classList.remove('fade-in')
+            currentAccordionBody.classList.remove('fade-in')
+   
+            setTimeout(() => {
+               currentAccordionTitle.classList.add('fade-in')
+               currentAccordionBody.classList.add('fade-in')
+            }, 1)
+         }
+
+         currentAccordionTitle.innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
+         currentAccordionBody.innerHTML  = LANGUAGE === 'pt' ? body : englishBody
       }
       
       icon.onmouseleave = () => {
@@ -315,8 +331,11 @@
 
          childIcon.style.transform = 'scale(1)'
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'pt' ? 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>' : 'Appreciate it <i class="far fa-thumbs-up"></i> <small>(Feel free to hover more)<small>'
-         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? '(É ilimitado e gratuito)' : "(It's free and ilimited)"
+         defaultTextTimeout = setTimeout(() => {
+            document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'pt' ? 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>' : 'Appreciate it <i class="far fa-thumbs-up"></i> <small>(Feel free to hover more)<small>'
+            document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? '(É ilimitado e gratuito)' : "(It's free and ilimited)"
+         }, 500)
+         
       }
 
       if(!IS_MOBILE) 
