@@ -7,4 +7,4 @@ Site que representa meu portfólio, onde publico meus projetos pessoais. Atualme
 - Javascript (jQuery só foi utilizado para poder usar a lib slick)
 
 ## Visualização
-[Clica aqui 😁](https://my-website-five-gray.vercel.app/)
+[Clica aqui 😁](https://my-website-andre-luis33.vercel.app/)
