@@ -1,4 +1,10 @@
 # my-website
-Site que representará meu portfólio, onde publicarei os projetos, usando HTML, CSS e Javascript puros (só usei jquery para a lib slick)
+Site que representa meu portfólio, onde publico meus projetos pessoais. Atualmente, está hospedado na Vercel, com o fluxo CI/CD implementado
 
-[Live demo](https://my-website-five-gray.vercel.app/)
+## Tecnologias
+- HTML
+- CSS
+- Javascript (jQuery só foi utilizado para poder usar a lib slick)
+
+## Visualização
+[Clica aqui 😁](https://my-website-five-gray.vercel.app/)
