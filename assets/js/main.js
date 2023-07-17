@@ -286,11 +286,7 @@
       const accordionType = icon.getAttribute('data-accordion')
 
       icon.onmouseenter = () => {
-         console.log('triggered');
          clearTimeout(defaultTextTimeout)
-
-
-
 
          const childIcon = icon.querySelector('i, svg')
          childIcon.style.transform = 'scale(1.1)'
@@ -303,22 +299,25 @@
             icon.style.color = color
          }
 
+         const currentAccordionTitle = document.querySelector(`#${accordionType}-title`)
+         const currentAccordionBody  = document.querySelector(`#${accordionType}-body`)
+
          const skillName = icon.getAttribute('data-skill-name')   
          const { title, body, englishTitle, englishBody } = skills.find(skill => skill.name === skillName)
 
 
          if(title !== document.querySelector(`#${accordionType}-title`).textContent) {
-            document.querySelector(`#${accordionType}-title`).classList.remove('fade-in')
-            document.querySelector(`#${accordionType}-body`).classList.remove('fade-in')
+            currentAccordionTitle.classList.remove('fade-in')
+            currentAccordionBody.classList.remove('fade-in')
    
             setTimeout(() => {
-               document.querySelector(`#${accordionType}-title`).classList.add('fade-in')
-               document.querySelector(`#${accordionType}-body`).classList.add('fade-in')
-            }, 3)
+               currentAccordionTitle.classList.add('fade-in')
+               currentAccordionBody.classList.add('fade-in')
+            }, 1)
          }
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
-         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? body : englishBody
+         currentAccordionTitle.innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
+         currentAccordionBody.innerHTML  = LANGUAGE === 'pt' ? body : englishBody
       }
       
       icon.onmouseleave = () => {
