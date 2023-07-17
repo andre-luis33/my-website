@@ -175,7 +175,6 @@
       {
          name: 'html',
          title: 'HTML',
-         // body: 'Possuo vasta experiência, após trabalhar em diversos projetos das mais diferentes áreas, respeitando as tags semânticas, técnicas de SEO, acessibilidade, otimizações e formulários (não uso o atributo required pra validação, js não custa nada).',
          body: 'Após atuar em diversos projetos, posso dizer com confiança que domino essa linguagem de marcação e seus pontos mais importantes, como o uso de html semântico, técnicas de SEO, acessibilidade, otimizações, formulários e validações (não uso o atributo required pra validação, js não custa nada).',
          englishBody: 'Strong experience after working in many projects in a lot of areas, always keeping in mind the semantics tags, SEO strategies, accessibility, optimizations and forms (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
       },
@@ -188,7 +187,7 @@
       {
          name: 'js',
          title: 'Javascript',
-         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Sei manipular a DOM direitinho, Event Listeners, requisições AJAX, HOFs e muito mais',
+         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Possuo uma base de conhecimentos bem sólida, pois desenvolvi diversos projetos usando o javascript puro, tão reativos quanto. De seus principais pontos, domino manipulação da DOM, Event Listeners, requisições AJAX, HOFs, Arrow Functions, diferença de var, let e const rsrs, json,...',
          englishBody: 'This is my favorite part of the front-end, where all the magic happens. I know DOM manipulation just fine, Event listeners, AJAX requests, HOFs and much much more'
       },
       {
@@ -206,14 +205,14 @@
       {
          name: 'react',
          title: 'React JS',
-         body: 'É a tecnologia que estou estudando no momento e cada vez me aprofundando mais. Já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas, Context API, Event Emitters, Components, ...',
+         body: 'É a tecnologia que estou estudando no momento e cada vez me aprofundando mais. Já trabalhei em alguns projetos, tendo que lidar com seus Hooks, Rotas, Context API, Event Emitters, Components, gerenciamento de estado, styled components...',
          englishBody: 'Tecnology that i\'m currently studying, and improving as we speak (pretend we are). Worked in a few projects, having to deal with its hooks, routes, Context API, Event Emitters, Components, ...',
       },
 
       {
          name: 'php',
          title: 'PHP',
-         body: 'Linguagem que eu domino e uso há mais de 3 anos. Comecei com PHP puro, e então fui evoluindo nessa stack que sempre me possibilitou fazer tudo. Funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC, ...',
+         body: 'Linguagem que eu domino e desenvolvi diversos projetos, sempre entregando tudo que foi pedido, porque né, o que é que não da pra fazer com PHP? Comecei com PHP puro, e então fui evoluindo, e domino seus principais pontos, como funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC,...',
          englishBody: 'Language that i am the boss and use for over 3 years. Started from pure PHP, and then evolving in this language that always made everthing possible. Functions, POO, PDO, Composer, Session, Cookie, File Upload, File manipulation, Excel Sheets, pdfs, APIs REST, MVC, ...'
       },
       {
@@ -280,14 +279,20 @@
    ]
 
    const skillIcons = document.querySelectorAll('.icon[data-icon-hover]')
+   let defaultTextTimeout
 
    skillIcons.forEach(icon => {
       
       const accordionType = icon.getAttribute('data-accordion')
 
-      icon.onmouseover = () => {
-         const childIcon = icon.querySelector('i, svg')
+      icon.onmouseenter = () => {
+         console.log('triggered');
+         clearTimeout(defaultTextTimeout)
 
+
+
+
+         const childIcon = icon.querySelector('i, svg')
          childIcon.style.transform = 'scale(1.1)'
             
          
@@ -300,6 +305,17 @@
 
          const skillName = icon.getAttribute('data-skill-name')   
          const { title, body, englishTitle, englishBody } = skills.find(skill => skill.name === skillName)
+
+
+         if(title !== document.querySelector(`#${accordionType}-title`).textContent) {
+            document.querySelector(`#${accordionType}-title`).classList.remove('fade-in')
+            document.querySelector(`#${accordionType}-body`).classList.remove('fade-in')
+   
+            setTimeout(() => {
+               document.querySelector(`#${accordionType}-title`).classList.add('fade-in')
+               document.querySelector(`#${accordionType}-body`).classList.add('fade-in')
+            }, 3)
+         }
 
          document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'en' && englishTitle !== undefined ? englishTitle : title
          document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? body : englishBody
@@ -316,8 +332,11 @@
 
          childIcon.style.transform = 'scale(1)'
 
-         document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'pt' ? 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>' : 'Appreciate it <i class="far fa-thumbs-up"></i> <small>(Feel free to hover more)<small>'
-         document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? '(É ilimitado e gratuito)' : "(It's free and ilimited)"
+         defaultTextTimeout = setTimeout(() => {
+            document.querySelector(`#${accordionType}-title`).innerHTML = LANGUAGE === 'pt' ? 'Valeeu <i class="far fa-thumbs-up"></i> <small>(Pode passar mais ok)<small>' : 'Appreciate it <i class="far fa-thumbs-up"></i> <small>(Feel free to hover more)<small>'
+            document.querySelector(`#${accordionType}-body`).innerHTML  = LANGUAGE === 'pt' ? '(É ilimitado e gratuito)' : "(It's free and ilimited)"
+         }, 500)
+         
       }
 
       if(!IS_MOBILE) 
