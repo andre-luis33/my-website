@@ -809,10 +809,22 @@ html.light-mode .accordion .accordion-arrow {
 
 .accordion-body .text-content .title {
    margin-bottom: 5px;
+   opacity: 0;
+}
+
+.accordion-body .text-content .title.fade-in {
+   transition: 1s all;
+   opacity: 1;
 }
 
 .accordion-body .text-content .body {
    margin-right: 20px;
+   opacity: 0;
+}
+
+.accordion-body .text-content .body.fade-in {
+   transition: 1s all;
+   opacity: 1;
 }
 
 .accordion-body .icons-wrapper {
