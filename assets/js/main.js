@@ -176,19 +176,19 @@
          name: 'html',
          title: 'HTML',
          body: 'Após atuar em diversos projetos, posso dizer com confiança que domino essa linguagem de marcação e seus pontos mais importantes, como o uso de html semântico, técnicas de SEO, acessibilidade, otimizações, formulários e validações (não uso o atributo required pra validação, js não custa nada).',
-         englishBody: 'Strong experience after working in many projects in a lot of areas, always keeping in mind the semantics tags, SEO strategies, accessibility, optimizations and forms (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
+         englishBody: 'After working in many projects, I can confidently say that I have a strong grasp of this markup language and its vital aspects, such as implementing semantic HTML, utilizing SEO techniques, ensuring accessibility, optimizing performance, handling forms, and validations (I don\'t use the required attribute to validate, cause a little bit of javascript doesn\'t hurt anybody).'
       },
       {
          name: 'css',
          title: 'CSS',
          body: 'Não existe site sem CSS, e em todos os projetos que atuei, sempre busquei perfeição, e a melhor qualidade possível, com foco em entregar um site que se destaque entre os outros, sempre sendo fiel aos mockups no figma. Também domino os principais pontos, como Flexbox, CSS Grid, Box Model,... Além do design responsivo, levando em consideração até os benditos usuários do galaxy fold...',
-         englishBody: 'There is no such thing as website without CDD, and as HTML, i also have strong skills with CSS, Flexbox, CSS Grid, Box Model, ... And of course, the nice looking responsive design with a minified file that are a rule :D'
+         englishBody: 'There\'s no website without CSS, and in all the projects I\'ve worked on, I\'ve always worked for perfection and the highest quality possible, with a focus on delivering a standout site among others, while staying true to the mockups in Figma. I\'m also an expert in key aspects such as Flexbox, CSS Grid, Box Model, and more. Additionally, I ensure the design is responsive, taking into consideration even those blessed Galaxy Fold users!'
       },
       {
          name: 'js',
          title: 'Javascript',
-         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Possuo uma base de conhecimentos bem sólida, pois desenvolvi diversos projetos usando o javascript puro, tão reativos quanto. De seus principais pontos, domino manipulação da DOM, Event Listeners, requisições AJAX, HOFs, Arrow Functions, diferença de var, let e const rsrs, json,...',
-         englishBody: 'This is my favorite part of the front-end, where all the magic happens. I know DOM manipulation just fine, Event listeners, AJAX requests, HOFs and much much more'
+         body: 'É aqui que a mágica acontece, e a brincadeira fica mais legal. Possuo uma base de conhecimentos bem sólida, pois desenvolvi diversos projetos usando o javascript puro, tão reativos quanto. De seus principais pontos, domino manipulação da DOM, Event Listeners, requisições AJAX, HOFs, Arrow Functions, diferença de var, let e const rsrs, json e muito mais.',
+         englishBody: 'This is where the magic happens, and the fun really begins. I have a solid knowledge base as I\'ve developed numerous projects using pure JavaScript, as reactive as it gets. Among its key aspects, I\'m expert in DOM manipulation, Event Listeners, AJAX requests, Higher-Order Functions (HOFs), Arrow Functions, the difference between var, let, and const (haha), JSON, and more.'
       },
       {
          name: 'jquery',
@@ -212,8 +212,8 @@
       {
          name: 'php',
          title: 'PHP',
-         body: 'Linguagem que eu domino e desenvolvi diversos projetos, sempre entregando tudo que foi pedido, porque né, o que é que não da pra fazer com PHP? Comecei com PHP puro, e então fui evoluindo, e domino seus principais pontos, como funções, POO, PDO, Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC,...',
-         englishBody: 'Language that i am the boss and use for over 3 years. Started from pure PHP, and then evolving in this language that always made everthing possible. Functions, POO, PDO, Composer, Session, Cookie, File Upload, File manipulation, Excel Sheets, pdfs, APIs REST, MVC, ...'
+         body: 'Linguagem que eu domino e desenvolvi diversos projetos, sempre entregando tudo que foi pedido, porque né, o que é que não da pra fazer com PHP? Comecei com PHP puro, e então fui evoluindo, e domino seus principais pontos, como funções, POO (Programação Orientada a Objetos), PDO (PHP Data Objects), Composer, Sessão, Cookie, File Upload, File manipulation, geração de planilhas, pdfs, APIs REST, MVC (Model-View-Controller) e muito mais',
+         englishBody: 'A language I master and have developed numerous projects in, always delivering everything that was requested, because, you know, what can\'t you do with PHP? I started with pure PHP and then evolved, becoming proficient in its key aspects such as functions, OOP (Object-Oriented Programming), PDO (PHP Data Objects), Composer, Sessions, Cookies, File Upload, File Manipulation, generating spreadsheets, PDFs, RESTful APIs, MVC (Model-View-Controller), and more.'
       },
       {
          name: 'laravel',
