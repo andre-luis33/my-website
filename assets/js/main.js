@@ -442,7 +442,7 @@
       try {
          fetch(API_URL, config)
             .then(res => {
-               if(!res.ok || res.status != 201) {
+               if(!res.ok || res.status != 200) {
                   throw new Error('Request failed')
                }
 
