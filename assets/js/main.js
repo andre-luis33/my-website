@@ -498,16 +498,22 @@
 
    /**
     * API has a cold start where it is hosted, so when a user comes to the website, it hits the API to start it
+    * 
+    * It also hits other projects APIs because of the same cold start issue.
     */
    async function startApiService() {
-      if(ENVIROMENT === 'dev') 
+      if(ENVIROMENT === 'dfev') 
          return
 
+      const apisToStart = [
+         API_BASE_URL,
+         'https://api-mycontacts.onrender.com/'
+      ]
+
       try {
-         const response = await fetch(API_BASE_URL)
-         const json = response.json()
+         await Promise.all(apisToStart.map(url => fetch(url)))
       } catch (error) {
-         console.log(error);
+         console.log(error)
       }
    }
 
